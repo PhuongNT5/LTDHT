@@ -1,23 +1,18 @@
 (function () {
-    angular.module('app.admin')
-        .controller('adminController', adminController);
-    adminController.$inject = ['$q', '$http', '$state', 'authService'];
-    function adminController($q, $http, $state, authService) {
-        var vm = this;
-        vm.turnActive = turnActive;
-        vm.turn = 0;
+  angular.module('app.admin')
+    .controller('adminController', adminController);
+  adminController.$inject = ['$q', '$http', '$state'];
 
-        function turnActive(state) {
-            vm.turn = state;
-        }
-        vm.name = '';
-        init();
-        function init() {
+  function adminController($q, $http, $state) {
+    var vm = this;
+    vm.turnActive = turnActive;
+    vm.turn = 0;
 
-            var a = authService.getToken();
-            vm.name = a.firstname + a.lastname;
-
-        }
+    function turnActive(state) {
+      vm.turn = state;
     }
+    vm.name = '';
+    init();
+  }
 
 })();
