@@ -8,24 +8,20 @@
     var apiUrl = appConfigs.baseApiUrl.concat("theloai");
 
     return {
-      loadTheloais: loadTheloais,
+      getTheloais: getTheloais,
       createTheloai: createTheloai,
       getTheloaiById: getTheloaiById,
       deleteTheloai: deleteTheloai
     };
 
-    function loadTheloais() {
-
-      function successCallBack(response) {
-        return response;
-      }
-
-      function errorCallBack(response) {
-        console.log("error");
-        return response;
-      }
-      return $http.get('http://localhost:2038/api/Bantins')
-        .then(successCallBack, errorCallBack);
+    function getTheloais() {
+      var deferred = $q.defer();
+      $http.get('http://localhost:2038/api/Theloais').then(function (res) {
+        deferred.resolve(res.data);
+      }, function (err) {
+        deferred.reject(err.data);
+      });
+      return deferred.promise;
     }
 
     function createTheloai(group) {
