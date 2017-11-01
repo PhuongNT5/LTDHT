@@ -9,9 +9,9 @@
 
     return {
       loadTheloais: loadTheloais,
-      //   createTheloai: createTheloai,
-      //   getTheloaiById: getTheloaiById,
-      //   deleteTheloai: deleteTheloai
+      createTheloai: createTheloai,
+      getTheloaiById: getTheloaiById,
+      deleteTheloai: deleteTheloai
     };
 
     function loadTheloais() {
@@ -28,48 +28,44 @@
         .then(successCallBack, errorCallBack);
     }
 
-    // function createGroup(group) {
-    //   var deferred = $q.defer();
-    //   $http.post('api/Groups/Create', group)
-    //     .then(function (res) {
-    //       deferred.resolve(res.data);
-    //       var toastrmessage = $translate.instant('GROUP.MESSAGE.CREATESUCCESS');
-    //       toastr.success(toastrmessage, toastrSuccess);
+    function createTheloai(group) {
+      var deferred = $q.defer();
+      $http.post('http://localhost:2038/api/Theloais', group)
+        .then(function (res) {
+          deferred.resolve(res.data);
+          console.log("success");
+        }, function (err) {
+          deferred.reject(err.data);
+        })
+      return deferred.promise;
+    }
 
-    //     }, function (err) {
-    //       deferred.reject(err.data);
-    //     })
-    //   return deferred.promise;
-    // }
+    function deleteTheloai(theloaiId) {
+      function successCallBack(response) {
+        console.log("success");
+      }
 
-    // function deleteGroup(groupId) {
-    //   function successCallBack(response) {
-    //     var toastrmessage = $translate.instant('GROUP.MESSAGE.DELETESUCCESS');
-    //     toastr.success(toastrmessage, toastrSuccess);
-    //   }
+      function errorCallBack(response) {
+        return response;
+      }
 
-    //   function errorCallBack(response) {
-    //     return response;
-    //   }
-
-    //   return $http.delete('api/Groups/Delete/' + groupId)
-    //     .then(successCallBack, errorCallBack);
-    // }
+      return $http.delete('http://localhost:2038/api/Theloais' + theloaiId)
+        .then(successCallBack, errorCallBack);
+    }
 
 
-    // function getGroupById(groupId) {
-    //   function successCallBack(response) {
-    //     return response;
-    //   }
+    function getTheloaiById(theloaiId) {
+      function successCallBack(response) {
+        return response;
+      }
 
-    //   function errorCallBack() {
-    //     var toastrmessage = $translate.instant('GROUP.MESSAGE.GETBYIDFAILED');
-    //     toastr.error(toastrmessage, toastrError);
-    //   }
+      function errorCallBack() {
+        console.log(error);
+      }
 
-    //   return $http.get('api/Groups/GetById/' + groupId)
-    //     .then(successCallBack, errorCallBack);
-    // }
+      return $http.get('http://localhost:2038/api/Theloais' + theloaiId)
+        .then(successCallBack, errorCallBack);
+    }
 
     // function updateGroup(group) {
     //   function successCallBack(response) {
@@ -87,23 +83,6 @@
     //   }
 
     //   return $http.put('api/Groups/Update', group)
-    //     .then(successCallBack, errorCallBack);
-    // }
-
-    // function lockStudent(student) {
-    //   function successCallBack(response) {
-    //     if (response.status === 200) {
-    //       $state.go('start.student-list');
-    //     }
-    //     return response;
-    //   }
-
-    //   function errorCallBack(response) {
-    //     utilService.showErrorMessage(response.data.Errors);
-    //     return response;
-    //   }
-
-    //   return $http.put('api/accounts/LockStudent?id=' + student)
     //     .then(successCallBack, errorCallBack);
     // }
 
