@@ -1,5 +1,5 @@
 (function () {
 
-  angular.module('app.admin', []);
+  angular.module('app.admin', ['app.theloai', 'app.hinhanh']);
 
 })()

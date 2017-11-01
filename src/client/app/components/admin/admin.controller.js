@@ -11,8 +11,6 @@
     function turnActive(state) {
       vm.turn = state;
     }
-    vm.name = '';
-    init();
   }
 
 })();
