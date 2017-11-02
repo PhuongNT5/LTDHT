@@ -1669,4 +1669,134 @@ a {
   .unit section {
     padding-left: 15px; }
 
+.admin {
+  height: 100%;
+  margin-top: 0%;
+  /* remove outer padding */
+  /*Remove rounded coners*/
+  /* Add gap to nav and right windows.*/
+  /* .....NavBar: Icon only with coloring/layout.....*/
+  /*small/medium side display*/
+  /* .....NavBar: Fully showing nav bar..... */ }
+  .admin .main .row {
+    padding: 0px;
+    margin: 0px; }
+  .admin .navbar-inverse .navbar-nav > li > a:hover, .admin .navbar-inverse .navbar-nav > li > a:focus, .admin .dropdown-menu > li > a:hover, .admin .dropdown-menu > li > a:focus {
+    background-color: #A2D7D8; }
+  .admin .head {
+    background-color: #141D25;
+    height: 60px; }
+    .admin .head .title {
+      float: left;
+      margin-left: -225px;
+      margin-top: 20px;
+      color: white;
+      font-family: Montserrat, sans-serif !important;
+      font-weight: 700;
+      font-size: 25px; }
+    .admin .head .admin-info h5 {
+      font-size: 14px;
+      font-style: bold;
+      float: right;
+      color: white;
+      margin-right: 50px;
+      margin-top: 20px;
+      font-family: Montserrat, sans-serif !important; }
+  .admin .navbar-inverse {
+    background-color: #141D25;
+    border-color: #141D25;
+    margin-top: 60px; }
+  .admin .container-fluid {
+    margin-top: 25%; }
+  .admin nav.sidebar.navbar {
+    border-radius: 0px; }
+  .admin nav.sidebar, .admin .main {
+    transition: margin 200ms ease-out; }
+  .admin .main {
+    padding: 10px 10px 0 10px;
+    width: 70%;
+    float: right; }
+  @media (min-width: 768px) {
+    .admin {
+      /*Allow main to be next to Nav*/
+      /*lets nav bar to be showed on mouseover*/
+      /*Center Brand*/
+      /*Center Brand*/
+      /*Center Icons*/
+      /*adds border top to first nav box */
+      /*adds border to bottom nav boxes*/
+      /* Colors/style dropdown box*/
+      /*allows nav box to use 100% width*/
+      /*colors dropdown box text */
+      /*gives sidebar width/height*/
+      /*give sidebar 100% width;*/
+      /* Move nav to full on mouse over*/
+      /*for hiden things when navbar hidden*/ }
+      .admin .main {
+        position: absolute;
+        width: calc(100% - 40px);
+        /*keeps 100% minus nav size*/
+        margin-left: 40px;
+        float: right; }
+      .admin nav.sidebar:hover + .main {
+        margin-left: 200px; }
+      .admin nav.sidebar.navbar.sidebar > .container .navbar-brand, .admin .navbar > .container-fluid .navbar-brand {
+        margin-left: 0px; }
+      .admin nav.sidebar .navbar-brand, .admin nav.sidebar .navbar-header {
+        text-align: center;
+        width: 100%;
+        margin-left: 0px; }
+      .admin nav.sidebar a {
+        padding-right: 13px; }
+      .admin nav.sidebar .navbar-nav > li:first-child {
+        border-top: 1px #e5e5e5 solid; }
+      .admin nav.sidebar .navbar-nav > li {
+        border-bottom: 1px #e5e5e5 solid; }
+      .admin nav.sidebar .navbar-nav .open .dropdown-menu {
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none; }
+      .admin nav.sidebar .navbar-collapse, .admin nav.sidebar .container-fluid {
+        padding: 0 0px 0 0px; }
+      .admin .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #777; }
+      .admin nav.sidebar {
+        width: 280px;
+        height: 100%;
+        margin-left: -160px;
+        float: left;
+        z-index: 8000;
+        margin-bottom: 0px; }
+      .admin nav.sidebar li {
+        width: 100%; }
+      .admin nav.sidebar:hover {
+        margin-left: 0px; }
+      .admin .forAnimate {
+        opacity: 0; } }
+  @media (min-width: 1330px) {
+    .admin {
+      /*Allow main to be next to Nav*/
+      /*Show all nav*/
+      /*Show hidden items on nav*/ }
+      .admin .main {
+        width: calc(100% - 200px);
+        /*keeps 100% minus nav size*/
+        margin-left: 25%; }
+      .admin nav.sidebar {
+        margin-left: 0px;
+        float: left; }
+      .admin nav.sidebar .forAnimate {
+        opacity: 1; } }
+  .admin nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, .admin nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #CCC;
+    background-color: transparent; }
+  .admin nav:hover .forAnimate {
+    opacity: 1; }
+  .admin section {
+    padding-left: 15px; }
+
 /*#endregion */
