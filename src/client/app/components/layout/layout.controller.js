@@ -5,13 +5,15 @@
 
   function layoutController($q, $http, $state, theloaiService) {
     var vm = this;
+    vm.theloais = {}
+    vm.so = 9;
     init();
 
     function init() {
 
       function succeedCallback(theloais) {
         vm.theloais = theloais;
-        console.log(vm.theloais);
+        console.log(theloais);
       }
 
       function errorCallback(err) {

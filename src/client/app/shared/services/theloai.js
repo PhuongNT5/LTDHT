@@ -17,6 +17,7 @@
     function getTheloais() {
       var deferred = $q.defer();
       $http.get('http://localhost:2038/api/Theloais').then(function (res) {
+        console.log("success")
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

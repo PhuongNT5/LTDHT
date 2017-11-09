@@ -1,5 +1,5 @@
 {
-  "PORT": 3003,
+  "PORT": 2038,
   "BASE_URL": "/api",
   "mongodb": {
     "host": "localhost",

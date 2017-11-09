@@ -1,8 +1,8 @@
 {
-    "PORT": 8001,
-    "BASE_URL": "/api",
-    "mongodb": {
-        "host": "",
-        "database": "learn-english"
-    }
+  "PORT": 2038,
+  "BASE_URL": "/api",
+  "mongodb": {
+    "host": "",
+    "database": "learn-english"
+  }
 }

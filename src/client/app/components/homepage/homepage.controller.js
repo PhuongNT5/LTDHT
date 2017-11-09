@@ -6,7 +6,6 @@
 
   function HomepageController() {
     var vm = this;
-    var theloai = [];
 
   }
 })();
