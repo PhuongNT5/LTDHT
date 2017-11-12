@@ -1570,6 +1570,12 @@ a {
       width: 90%;
       height: 300px; }
 
+.carousel-inner {
+  width: 90%;
+  /* margin-left: 5%; */
+  height: 300px;
+  margin: 5%; }
+
 .unit {
   height: 90%;
   margin-top: 0%;
@@ -1701,7 +1707,10 @@ a {
   .admin .main .row {
     padding: 0px;
     margin: 0px; }
-  .admin .navbar-inverse .navbar-nav > li > a:hover, .admin .navbar-inverse .navbar-nav > li > a:focus, .admin .dropdown-menu > li > a:hover, .admin .dropdown-menu > li > a:focus {
+  .admin .navbar-inverse .navbar-nav > li > a:hover,
+  .admin .navbar-inverse .navbar-nav > li > a:focus,
+  .admin .dropdown-menu > li > a:hover,
+  .admin .dropdown-menu > li > a:focus {
     background-color: #A2D7D8; }
   .admin .head {
     background-color: #141D25;
@@ -1730,7 +1739,8 @@ a {
     margin-top: 25%; }
   .admin nav.sidebar.navbar {
     border-radius: 0px; }
-  .admin nav.sidebar, .admin .main {
+  .admin nav.sidebar,
+  .admin .main {
     transition: margin 200ms ease-out; }
   .admin .main {
     padding: 10px 10px 0 10px;
@@ -1760,9 +1770,11 @@ a {
         float: right; }
       .admin nav.sidebar:hover + .main {
         margin-left: 200px; }
-      .admin nav.sidebar.navbar.sidebar > .container .navbar-brand, .admin .navbar > .container-fluid .navbar-brand {
+      .admin nav.sidebar.navbar.sidebar > .container .navbar-brand,
+      .admin .navbar > .container-fluid .navbar-brand {
         margin-left: 0px; }
-      .admin nav.sidebar .navbar-brand, .admin nav.sidebar .navbar-header {
+      .admin nav.sidebar .navbar-brand,
+      .admin nav.sidebar .navbar-header {
         text-align: center;
         width: 100%;
         margin-left: 0px; }
@@ -1780,7 +1792,8 @@ a {
         background-color: transparent;
         border: 0;
         box-shadow: none; }
-      .admin nav.sidebar .navbar-collapse, .admin nav.sidebar .container-fluid {
+      .admin nav.sidebar .navbar-collapse,
+      .admin nav.sidebar .container-fluid {
         padding: 0 0px 0 0px; }
       .admin .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
         color: #777; }
@@ -1811,7 +1824,8 @@ a {
         float: left; }
       .admin nav.sidebar .forAnimate {
         opacity: 1; } }
-  .admin nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, .admin nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
+  .admin nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover,
+  .admin nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #CCC;
     background-color: transparent; }
   .admin nav:hover .forAnimate {

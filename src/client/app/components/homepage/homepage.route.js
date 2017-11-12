@@ -7,7 +7,7 @@
       .state('layout.homepage', {
         url: '/homepage',
         templateUrl: 'app/components/homepage/homepage.html',
-        controller: 'HomePageController',
+        controller: 'homePageController',
         controllerAs: 'vm'
       });
   }
