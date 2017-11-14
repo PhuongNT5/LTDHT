@@ -16,12 +16,12 @@
 
     function loadBantins() {
       var deferred = $q.defer();
-      $http.get('localhost:2038/api/Bantins').then(function (res) {
-          deferred.resolve(res.data);
-        },
-        function (err) {
-          deferred.reject(err.data);
-        });
+      $http.get('http://localhost:2038/api/Bantins').then(function (res) {
+        console.log("success")
+        deferred.resolve(res.data);
+      }, function (err) {
+        deferred.reject(err.data);
+      });
       return deferred.promise;
     }
 
