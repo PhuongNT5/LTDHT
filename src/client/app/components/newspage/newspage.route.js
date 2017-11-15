@@ -4,7 +4,7 @@ angular.module('app.newspage')
 function newspageConfig($stateProvider) {
 $stateProvider
     .state('newspage', {
-        url: '',
+        url: '/theloai/theloai.id',
         templateUrl: 'app/components/newspage/newspage.html',
         controller: 'newspageController',
         controllerAs: 'vm'

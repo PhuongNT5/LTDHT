@@ -9,7 +9,7 @@
       var directive = {
           restrict: 'EA',
           scope: {
-              lesson: '=',
+              bantin: '=',
           },
           templateUrl: 'app/shared/directives/bantin-theloai/bantin-theloai.html'
       };
