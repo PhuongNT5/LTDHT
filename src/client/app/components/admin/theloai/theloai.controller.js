@@ -1,38 +1,39 @@
 (function () {
     angular.module('app.theloai')
         .controller('theloaiController', theloaiController);
-    theloaiController.$inject = ['$q', '$http', '$state'];
-    function theloaiController($q, $http, $state) {
+    theloaiController.$inject = ['$q', '$http', '$state','theloaiService'];
+    function theloaiController($q, $http, $state, $theloaiService) {
         var vm = this;
         vm.turnActive = turnActive;
         vm.turn = 0;
-        vm.theloai = {}
+        vm.theloais = {}
 
         function turnActive(state) {
             vm.turn = state;
         }
         init();
         function init() {
-            // function succeedCallback(unit) {
-            //     vm.unit = unit;
-            // }
+            function succeedCallback(theloai) {
+                vm.theloais = theloai;
+            }
 
-            // function errorCallback(err) {
-            //     console.log(err);
-            // }
-            // unitService.loadUnits().then(function (unit) {
-            //     vm.unit = unit;
-            // }, errorCallback);
+            function errorCallback(err) {
+                console.log(err);
+            }
+            theloaiService.loadTheloais().then(function (theloai) {
+                vm.theloais = theloai;
+            }, errorCallback);
         }
-        // function deleteUnit(unitId) {
-        //     function succeedCallback(response) {
-        //         $state.go('admin.theloai', { reload: true });
-        //         unitService.loadUnits().then(function (unit) {
-        //             vm.unit = unit;
-        //         }, function (err) {
-        //             console.log(err);
-        //         });
-        //     }
+        function deleteTheloai(theloaiId) {
+            function succeedCallback(response) {
+                $state.go('admin.theloai', { reload: true });
+                theloaiService.loadTheloais().then(function (theloai) {
+                    vm.theloais = theloai;
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+          }
 
         //     function errorCallback(err) {
         //         console.log(err);

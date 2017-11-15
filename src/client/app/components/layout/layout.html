@@ -54,10 +54,10 @@
             <li>
               <a href="/homepage">HOME</a>
             </li>
-            <li>
-              <a href="#">THỜI SỰ</a>
+            <li ng-repeat="x in vm.theloais">
+              <a href="/{{x.TenTheloai}}">{{x.TenTheloai}}</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">ÂM NHẠC</a>
             </li>
             <li>
@@ -71,7 +71,7 @@
             </li>
             <li>
               <a href="#">THỂ THAO</a>
-            </li>
+            </li> -->
             <li>
               <form>
                 <input type="text" class="search" name="search" placeholder="Search.." style="float:right;width:250px;">

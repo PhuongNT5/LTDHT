@@ -5,7 +5,7 @@
   <table class="table table-striped">
     <div class="dropdown">
       <a class="btn-top" style="margin-right: 15px;" ng-class="vm.turn==1?'active':''" ng-click="vm.turnActive(1)" href="#" class="btn btn-primary btn-success pull-right">
-        <span class="glyphicon glyphicon-plus"></span> &nbsp Create New Unit</a>
+        <span class="glyphicon glyphicon-plus"></span> &nbsp Create New Image</a>
     </div>
 </div>
 <thead>
@@ -17,12 +17,12 @@
   </tr>
 </thead>
 <tbody>
-  <tr class="row-content" ng-repeat="x in vm.theloai track by $index">
+  <tr class="row-content" ng-repeat="x in vm.hinhanhs track by $index">
     <td>{{x.unit_id}}</td>
     <td>{{x.name}}</td>
     <td>{{x.title}}</td>
     <td>
-      <a class="btn btn-danger edit " ng-click="" aria-label="Settings ">
+      <a class="btn btn-danger edit " ng-click="deleteHinhanh(x.id)" aria-label="Settings ">
         <i class="fa fa-trash " aria-hidden="true "></i>
       </a> &nbsp
       <a class="btn btn-info edit " href="path/to/settings " aria-label="Settings ">
