@@ -1,3 +1,38 @@
-.new-content{
-
+.new-content {
+  background-color: #f5f5f5;
+  p {
+    font-size: 14px;
+  }
+  .content {
+    width: 70%;
+    margin-left: 15%;
+    background-color: white;
+    .title {
+      padding: 3%;
+      h2 {
+        margin: 0px !important;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+    .content-detail {
+      padding: 3%;
+    }
+    margin-bottom: 15px;
+    .detail-image {
+      text-align: center;
+      img {
+        width: 60% !important;
+        height: auto !important;
+      }
+      .motaHinhanh {
+        padding: 3%;
+        text-align: initial;
+      }
+    }
+  }
+  .tacgia {
+    text-align: end;
+    padding-right: 5%;
+  }
 }

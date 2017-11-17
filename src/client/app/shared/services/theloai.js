@@ -52,16 +52,13 @@
 
 
     function getTheloaiById(theloaiId) {
-      function successCallBack(response) {
-        return response;
-      }
-
-      function errorCallBack() {
-        console.log(error);
-      }
-
-      return $http.get('http://localhost:2038/api/Theloais' + theloaiId)
-        .then(successCallBack, errorCallBack);
+      var deferred = $q.defer();
+      $http.get('http://localhost:2038/api/Theloais/' + theloaiId).then(function (res) {
+        deferred.resolve(res.data);
+      }, function (err) {
+        deferred.reject(err.data);
+      });
+      return deferred.promise;
     }
 
     // function updateGroup(group) {

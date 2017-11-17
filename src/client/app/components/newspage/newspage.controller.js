@@ -1,22 +1,27 @@
 (function () {
   angular.module('app.newspage')
     .controller('newspageController', newspageController);
-  newspageController.$inject = ['$q', '$http', '$state', 'bantinService'];
+  newspageController.$inject = ['$q', '$http', '$state', 'bantinService', 'theloaiService'];
 
-  function newspageController($q, $http, $state, bantinService) {
+  function newspageController($q, $http, $state, bantinService, theloaiService) {
     var vm = this;
     vm.bantin = {};
+    vm.theloai = {};
     var bantinId = $state.params.Id;
+    var theloaiId;
+    var bantinNext = bantinId + 1;
     init();
 
     function init() {
       function succeedCallback(bantin) {
         vm.bantin = bantin;
+        console.log(vm.bantin);
       }
 
       function errorCallback(err) {
         console.log(err);
       }
+
       bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);
 
     }

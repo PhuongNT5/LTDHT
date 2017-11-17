@@ -1,8 +1,21 @@
 <div class="new-content">
-  <div class="title">
-    <p>{{vm.bantin.Tieude}}</p>
+  <div class="theloai">
+    <h2>{{vm.theloai.TenTheloai}}</h2>
   </div>
   <div class="content">
-    <p>{{vm.bantin.Noidung}}</p>
+    <div class="title">
+      <h2>{{vm.bantin.Tieude}}</h2>
+    </div>
+    <div class="content-detail">
+      <p>{{vm.bantin.Noidung}}</p>
+    </div>
+    <div class="detail-image" ng-repeat="anhBantin in vm.bantin.Anh">
+      <img src="{{anhBantin.Anh}}">
+      <p class="motaHinhanh">{{anhBantin.Mota}}</p>
+    </div>
+    <div class="tacgia">
+      <!-- <h4>*Photo by {{anhBantin[0].TenTacgia}}</h4> -->
+      <h4>*Author {{vm.bantin.TenTacgia}}</h4>
+    </div>
   </div>
 </div>

@@ -10,13 +10,17 @@
     </div>
     <div class="right-hotnews">
       <div class="new-top">
-        <img src="{{vm.bantins[1].Anh[1].Anh}}">
+        <a href="/newspage/{{vm.bantins[1].Id}}">
+          <img src="{{vm.bantins[1].Anh[1].Anh}}">
+        </a>
         <div class="title-new">
           <h2>{{vm.bantins[1].TenBantin}}</h2>
         </div>
       </div>
       <div class="new-top">
-        <img src="{{vm.bantins[2].Anh[1].Anh}}">
+        <a href="/newspage/{{vm.bantins[2].Id}}">
+          <img src="{{vm.bantins[2].Anh[1].Anh}}">
+        </a>
         <div class="title-new">
           <h2>{{vm.bantins[2].TenBantin}}</h2>
         </div>
@@ -39,7 +43,7 @@
             <div class="item active">
               <div class="row">
                 <div class="col-md-3">
-                  <a href="#" class="thumbnail">
+                  <a href="/newspage/{{vm.bantins[3].Id" class="thumbnail">
                     <img src="{{vm.bantins[3].Anh[0].Anh}}" alt="Image" style="max-width:100%;">
                   </a>
                   <p>{{vm.bantins[3].TenBantin}}</p>
@@ -102,9 +106,8 @@
     </div>
   </div>
   <!--.container-->
-  <div class="bantin" ng-repeat="theloai in vm.theloais">
-    <bantin-theloai theloai="theloai">
-
-    </bantin-theloai>
+  <div class="bantin" ng-repeat="theloaiId in vm.theloais.Id">
+    <list-bantin Id="theloaiId"></list-bantin>
   </div>
+</div>
 </div>
