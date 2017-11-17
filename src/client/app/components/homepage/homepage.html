@@ -1,16 +1,26 @@
 <div class="homepage">
   <div class="hotnews">
     <div class="left-hotnews">
-      <img src="{{vm.news[0].Anh[1].Anh}}">
+      <a href="/newspage/{{vm.bantins[0].Id}}">
+        <img src="{{vm.bantins[0].Anh[1].Anh}}">
+      </a>
       <div class="title-new">
-        <h2>{{vm.news[0].TenBantin}}</h2>
+        <h2>{{vm.bantins[0].TenBantin}}</h2>
       </div>
     </div>
     <div class="right-hotnews">
-      <img src="https://ld-wp.template-help.com/wordpress_65370_v1/wp-content/uploads/2017/04/ala-img-2-886x668.jpg">
-      <span class="title-new"></span>
-      <img src="https://ld-wp.template-help.com/wordpress_65370_v1/wp-content/uploads/2017/04/main-post-new-1-360x195.jpg">
-      <span class="title-new"></span>
+      <div class="new-top">
+        <img src="{{vm.bantins[1].Anh[1].Anh}}">
+        <div class="title-new">
+          <h2>{{vm.bantins[1].TenBantin}}</h2>
+        </div>
+      </div>
+      <div class="new-top">
+        <img src="{{vm.bantins[2].Anh[1].Anh}}">
+        <div class="title-new">
+          <h2>{{vm.bantins[2].TenBantin}}</h2>
+        </div>
+      </div>
     </div>
   </div>
   <div class="container">
@@ -21,7 +31,6 @@
           <ol class="carousel-indicators">
             <li data-target="#Carousel" data-slide-to="0" class="active"></li>
             <li data-target="#Carousel" data-slide-to="1"></li>
-            <li data-target="#Carousel" data-slide-to="2"></li>
           </ol>
 
           <!-- Carousel items -->
@@ -31,35 +40,9 @@
               <div class="row">
                 <div class="col-md-3">
                   <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                    <img src="{{vm.bantins[3].Anh[0].Anh}}" alt="Image" style="max-width:100%;">
                   </a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                  </a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                  </a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                  </a>
-                </div>
-              </div>
-              <!--.row-->
-            </div>
-            <!--.item-->
-
-            <div class="item">
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="#" class="thumbnail">
-                    <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
-                  </a>
+                  <p>{{vm.bantins[3].TenBantin}}</p>
                 </div>
                 <div class="col-md-3">
                   <a href="#" class="thumbnail">
@@ -119,7 +102,9 @@
     </div>
   </div>
   <!--.container-->
-  <div class ="bantin" ng-repeat="bantin in vm.bantins">
-    <bantin-theloai bantin="bantin"></bantin-theloai>
+  <div class="bantin" ng-repeat="theloai in vm.theloais">
+    <bantin-theloai theloai="theloai">
+
+    </bantin-theloai>
   </div>
 </div>

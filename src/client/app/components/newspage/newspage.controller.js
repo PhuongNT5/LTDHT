@@ -5,17 +5,19 @@
 
   function newspageController($q, $http, $state, bantinService) {
     var vm = this;
-    vm.bantin ={};
+    vm.bantin = {};
+    var bantinId = $state.params.Id;
     init();
-    function init(){
+
+    function init() {
       function succeedCallback(bantin) {
         vm.bantin = bantin;
-    }
+      }
 
-    function errorCallback(err) {
+      function errorCallback(err) {
         console.log(err);
-    }
-    bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);
+      }
+      bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);
 
     }
 

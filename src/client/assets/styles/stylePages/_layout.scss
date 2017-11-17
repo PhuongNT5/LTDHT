@@ -48,6 +48,9 @@
     .nav>li>a {
       color: black !important;
     }
+    .nav>li>a {
+      text-transform: uppercase;
+    }
     .nav>li>a:hover {
       color: #0be6af;
       font-weight: bold;

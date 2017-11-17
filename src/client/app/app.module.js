@@ -12,6 +12,7 @@
     'app.services',
     'app.layout',
     'app.homepage',
+    'app.newspage',
     'app.admin',
 
     'blocks.exception',

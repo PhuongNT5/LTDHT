@@ -13,7 +13,6 @@
 
       function succeedCallback(theloais) {
         vm.theloais = theloais;
-        console.log(theloais);
       }
 
       function errorCallback(err) {

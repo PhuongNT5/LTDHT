@@ -17,7 +17,6 @@
     function loadBantins() {
       var deferred = $q.defer();
       $http.get('http://localhost:2038/api/Bantins').then(function (res) {
-        console.log("success")
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -30,7 +29,6 @@
       $http.post('http://localhost:2038/api/Bantins', group)
         .then(function (res) {
           deferred.resolve(res.data);
-          console.log("success");
         }, function (err) {
           deferred.reject(err.data);
         })
@@ -38,30 +36,24 @@
     }
 
     function deleteBantin(BantinId) {
-      function successCallBack(response) {
-        console.log("success");
-      }
-
-      function errorCallBack(response) {
-        return response;
-      }
-
-      return $http.delete('http://localhost:2038/api/Bantins' + BantinId)
-        .then(successCallBack, errorCallBack);
+      var deferred = $q.defer();
+      $http.get('http://localhost:2038/api/Bantins' + BantinId).then(function (res) {
+        deferred.resolve(res.data);
+      }, function (err) {
+        deferred.reject(err.data);
+      });
+      return deferred.promise;
     }
 
 
     function getBantinById(BantinId) {
-      function successCallBack(response) {
-        return response;
-      }
-
-      function errorCallBack() {
-        console.log(error);
-      }
-
-      return $http.get('http://localhost:2038/api/Bantins' + BantinId)
-        .then(successCallBack, errorCallBack);
+      var deferred = $q.defer();
+      $http.get('http://localhost:2038/api/Bantins/' + BantinId).then(function (res) {
+        deferred.resolve(res.data);
+      }, function (err) {
+        deferred.reject(err.data);
+      });
+      return deferred.promise;
     }
 
     // function updateGroup(group) {

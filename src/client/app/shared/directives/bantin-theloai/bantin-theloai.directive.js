@@ -2,24 +2,26 @@
   'use strict';
 
   angular.module('app.homepage')
-      .directive('bantinTheloai', bantinTheloai);
+    .directive('bantinTheloai', bantinTheloai);
 
   /* @ngInject */
   function bantinTheloai() {
-      var directive = {
-          restrict: 'EA',
-          scope: {
-              bantin: '=',
-          },
-          templateUrl: 'app/shared/directives/bantin-theloai/bantin-theloai.html'
-      };
+    var directive = {
+      restrict: 'EA',
+      scope: {
+        bantin: '=',
+        theloai: "="
+      },
+      templateUrl: 'app/shared/directives/bantin-theloai/bantin-theloai.html'
+    };
 
-      bantinTheloaiController.$inject = ['$scope', 'bantinService'];
-      function bantinTheloaiController($scope, bantinService) {
-          var vm = this;
+    bantinTheloaiController.$inject = ['$scope', 'bantinService'];
 
-      }
-      return directive;
+    function bantinTheloaiController($scope, bantinService) {
+      var vm = this;
+
+    }
+    return directive;
   }
 
 })();
