@@ -24,9 +24,7 @@
 
       function succeedTheloaiCallback(theloai) {
         vm.theloai = theloai;
-        console.log(vm.theloai);
       }
-
       bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);
 
     }

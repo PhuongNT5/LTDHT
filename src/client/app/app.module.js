@@ -13,6 +13,7 @@
     'app.layout',
     'app.homepage',
     'app.newspage',
+    'app.theloaidetail',
     'app.admin',
 
     'blocks.exception',

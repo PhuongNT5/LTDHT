@@ -1,0 +1,13 @@
+<div class="theloaidetail">
+  <div class="listbantin" ng-repeat="bantin in vm.news">
+    <div class="newbantin">
+      <a href="/newspage/{{bantin.Id}}">
+        <img class="images" src="{{bantin.Anh[0].Anh}}">
+      </a>
+      <div class="tomtatbt">
+        <p>{{bantin.TenBantin}}</p>
+        <p>{{bantin.Tieude}}</p>
+      </div>
+    </div>
+  </div>
+</div>

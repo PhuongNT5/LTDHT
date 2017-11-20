@@ -16,7 +16,7 @@
 
     function getHinhanhs() {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/hinhanhs').then(function (res) {
+      $http.get('http://localhost:2038/api/anhBantins').then(function (res) {
         console.log("success")
         deferred.resolve(res.data);
       }, function (err) {
@@ -27,7 +27,7 @@
 
     function createHinhanh(group) {
       var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/hinhanhs', group)
+      $http.post('http://localhost:2038/api/anhBantins', group)
         .then(function (res) {
           deferred.resolve(res.data);
           console.log("success");
@@ -46,7 +46,7 @@
         return response;
       }
 
-      return $http.delete('http://localhost:2038/api/hinhanhs' + hinhanhId)
+      return $http.delete('http://localhost:2038/api/anhBantins/' + hinhanhId)
         .then(successCallBack, errorCallBack);
     }
 
@@ -60,7 +60,7 @@
         console.log(error);
       }
 
-      return $http.get('http://localhost:2038/api/hinhanhs' + hinhanhId)
+      return $http.get('http://localhost:2038/api/anhBantins/' + hinhanhId)
         .then(successCallBack, errorCallBack);
     }
 

@@ -1,4 +1,7 @@
 /*LAYOUT*/
+.pageContainer {
+  margin-bottom: 40px; }
+
 .backgroundLayout {
   width: 100%;
   height: 10%;
@@ -41,11 +44,12 @@
       color: black !important; }
     .pageContainer .navbottom .nav > ul > li {
       margin-top: 10px; }
-  .pageContainer .signin {
+  .pageContainer .signin,
+  .pageContainer .register {
     background-color: #333;
     color: white;
     float: right;
-    margin-top: 5px;
+    margin-top: 8px;
     margin-right: 50px; }
   .pageContainer .search {
     margin-bottom: 10px; }
@@ -150,6 +154,9 @@
   .newbantin .tomtatbt {
     width: 65%;
     float: right; }
+    .newbantin .tomtatbt h4 {
+      font-size: 24px;
+      font-weight: bold; }
 
 .unit {
   height: 90%;
@@ -411,37 +418,46 @@
 .new-content {
   background-color: #f5f5f5; }
   .new-content p {
-    font-size: 16px; }
+    font-size: 16px;
+    font-weight: 500; }
   .new-content .content,
-  .new-content .theloai {
+  .new-content .theloai,
+  .new-content .comment {
     width: 70%;
     margin-left: 15%;
     background-color: white;
     margin-bottom: 1px; }
     .new-content .content .newsName,
-    .new-content .theloai .newsName {
+    .new-content .theloai .newsName,
+    .new-content .comment .newsName {
       padding: 3%; }
       .new-content .content .newsName h2,
-      .new-content .theloai .newsName h2 {
+      .new-content .theloai .newsName h2,
+      .new-content .comment .newsName h2 {
         margin: 0px !important;
         font-size: 36px;
         font-weight: bold; }
     .new-content .content .content-detail,
-    .new-content .theloai .content-detail {
+    .new-content .theloai .content-detail,
+    .new-content .comment .content-detail {
       padding: 3%; }
       .new-content .content .content-detail .title,
-      .new-content .theloai .content-detail .title {
+      .new-content .theloai .content-detail .title,
+      .new-content .comment .content-detail .title {
         font-size: 24px;
         font-weight: bold; }
     .new-content .content .detail-image,
-    .new-content .theloai .detail-image {
+    .new-content .theloai .detail-image,
+    .new-content .comment .detail-image {
       text-align: center; }
       .new-content .content .detail-image img,
-      .new-content .theloai .detail-image img {
+      .new-content .theloai .detail-image img,
+      .new-content .comment .detail-image img {
         width: 60% !important;
         height: auto !important; }
       .new-content .content .detail-image .motaHinhanh,
-      .new-content .theloai .detail-image .motaHinhanh {
+      .new-content .theloai .detail-image .motaHinhanh,
+      .new-content .comment .detail-image .motaHinhanh {
         padding: 3%;
         text-align: initial; }
   .new-content .theloai {
@@ -456,5 +472,112 @@
     .new-content .tacgia h4 {
       font-weight: 600;
       font-style: italic; }
+  .new-content .comment .comment-title {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+  .new-content .comment img {
+    margin: 32px 20px; }
+
+.widget-area.blank {
+  background: none repeat scroll 0 0 transparent;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none; }
+
+body .no-padding {
+  padding: 0; }
+
+.widget-area {
+  background-color: #fff;
+  border-radius: 4px;
+  -ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+  float: left;
+  margin-top: 30px;
+  padding: 25px 30px;
+  position: relative;
+  width: 100%; }
+
+.status-upload {
+  background: none repeat scroll 0 0 #f5f5f5;
+  border-radius: 4px;
+  width: 100%; }
+
+.status-upload form {
+  float: left;
+  width: 100%; }
+
+.status-upload form textarea {
+  background: none repeat scroll 0 0 #fff;
+  border: medium none;
+  border-radius: 4px 4px 0 0;
+  color: #777777;
+  float: left;
+  font-family: Lato;
+  font-size: 14px;
+  height: 142px;
+  letter-spacing: 0.3px;
+  padding: 20px;
+  width: 100%;
+  resize: vertical;
+  outline: none;
+  border: 1px solid #F2F2F2; }
+
+.status-upload ul {
+  float: left;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0 0 0 15px;
+  width: auto; }
+
+.status-upload ul > li {
+  float: left; }
+
+.status-upload ul > li > a {
+  border-radius: 4px;
+  color: #777777;
+  float: left;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  margin: 10px 0 10px 10px;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+  width: 30px;
+  cursor: pointer; }
+
+.status-upload ul > li > a:hover {
+  background: none repeat scroll 0 0 #606060;
+  color: #fff; }
+
+.status-upload form button {
+  border: medium none;
+  border-radius: 4px;
+  color: #fff;
+  float: right;
+  font-family: Lato;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  margin-right: 9px;
+  margin-top: 9px;
+  padding: 6px 15px; }
+
+.dropdown > a > span.green:before {
+  border-left-color: #2dcb73; }
+
+.status-upload form button > i {
+  margin-right: 7px; }
+
+.col-md-6 {
+  float: right;
+  width: 70%;
+  margin-right: 15%;
+  margin-top: -30px;
+  background-color: #f6f6f6;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
 
 /*#endregion */

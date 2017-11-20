@@ -11,16 +11,18 @@
 <thead>
   <tr class="row-name">
     <th>Id</th>
-    <th>Bản tin</th>
     <th>Ảnh</th>
+    <th>Mo ta</th>
     <th>Settings</th>
   </tr>
 </thead>
 <tbody>
   <tr class="row-content" ng-repeat="x in vm.hinhanhs track by $index">
-    <td>{{x.unit_id}}</td>
-    <td>{{x.name}}</td>
-    <td>{{x.title}}</td>
+    <td>{{x.Id}}</td>
+    <td>
+      <img src="{{x.Anh}}" style="width:20px; height:20px;">
+    </td>
+    <td>{{x.Mota}}</td>
     <td>
       <a class="btn btn-danger edit " ng-click="deleteHinhanh(x.id)" aria-label="Settings ">
         <i class="fa fa-trash " aria-hidden="true "></i>
