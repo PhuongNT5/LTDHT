@@ -17,7 +17,6 @@
         vm.bantins.sort(function (a, b) {
           return b.Id - a.Id
         });
-        console.log(vm.bantins)
       }
 
       function errorCallback(err) {

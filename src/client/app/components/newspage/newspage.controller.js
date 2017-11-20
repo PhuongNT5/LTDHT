@@ -15,11 +15,16 @@
     function init() {
       function succeedCallback(bantin) {
         vm.bantin = bantin;
-        console.log(vm.bantin);
+        theloaiService.getTheloaiById(vm.bantin.TheloaiId).then(succeedTheloaiCallback, errorCallback);
       }
 
       function errorCallback(err) {
         console.log(err);
+      }
+
+      function succeedTheloaiCallback(theloai) {
+        vm.theloai = theloai;
+        console.log(vm.theloai);
       }
 
       bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);

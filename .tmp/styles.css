@@ -8,6 +8,7 @@
 .pageContainer {
   font-family: Montserrat, sans-serif !important;
   font-weight: 600;
+  font-size: 14px;
   background-color: #f7f7f7; }
   .pageContainer a {
     color: white !important; }
@@ -133,6 +134,22 @@
 .bantin-theloai {
   width: 80%;
   margin-left: 10%; }
+
+.newbantin {
+  margin-top: 1%;
+  width: 70%;
+  height: auto;
+  display: inline-block;
+  margin-left: 15%;
+  border: 1px solid #888888;
+  padding: 1.5%; }
+  .newbantin img {
+    width: 25%;
+    height: 60%;
+    float: left; }
+  .newbantin .tomtatbt {
+    width: 65%;
+    float: right; }
 
 .unit {
   height: 90%;
@@ -394,30 +411,50 @@
 .new-content {
   background-color: #f5f5f5; }
   .new-content p {
-    font-size: 14px; }
-  .new-content .content {
+    font-size: 16px; }
+  .new-content .content,
+  .new-content .theloai {
     width: 70%;
     margin-left: 15%;
     background-color: white;
-    margin-bottom: 15px; }
-    .new-content .content .title {
+    margin-bottom: 1px; }
+    .new-content .content .newsName,
+    .new-content .theloai .newsName {
       padding: 3%; }
-      .new-content .content .title h2 {
+      .new-content .content .newsName h2,
+      .new-content .theloai .newsName h2 {
         margin: 0px !important;
-        font-size: 30px;
+        font-size: 36px;
         font-weight: bold; }
-    .new-content .content .content-detail {
+    .new-content .content .content-detail,
+    .new-content .theloai .content-detail {
       padding: 3%; }
-    .new-content .content .detail-image {
+      .new-content .content .content-detail .title,
+      .new-content .theloai .content-detail .title {
+        font-size: 24px;
+        font-weight: bold; }
+    .new-content .content .detail-image,
+    .new-content .theloai .detail-image {
       text-align: center; }
-      .new-content .content .detail-image img {
+      .new-content .content .detail-image img,
+      .new-content .theloai .detail-image img {
         width: 60% !important;
         height: auto !important; }
-      .new-content .content .detail-image .motaHinhanh {
+      .new-content .content .detail-image .motaHinhanh,
+      .new-content .theloai .detail-image .motaHinhanh {
         padding: 3%;
         text-align: initial; }
+  .new-content .theloai {
+    height: 50px; }
+    .new-content .theloai h2 {
+      padding-left: 3%;
+      padding-top: 1.5%;
+      color: #0be6af; }
   .new-content .tacgia {
     text-align: end;
     padding-right: 5%; }
+    .new-content .tacgia h4 {
+      font-weight: 600;
+      font-style: italic; }
 
 /*#endregion */

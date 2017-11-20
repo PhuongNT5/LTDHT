@@ -17,7 +17,6 @@
     function getTheloais() {
       var deferred = $q.defer();
       $http.get('http://localhost:2038/api/Theloais').then(function (res) {
-        console.log("success")
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -30,7 +29,6 @@
       $http.post('http://localhost:2038/api/Theloais', group)
         .then(function (res) {
           deferred.resolve(res.data);
-          console.log("success");
         }, function (err) {
           deferred.reject(err.data);
         })
@@ -38,16 +36,13 @@
     }
 
     function deleteTheloai(theloaiId) {
-      function successCallBack(response) {
-        console.log("success");
-      }
-
-      function errorCallBack(response) {
-        return response;
-      }
-
-      return $http.delete('http://localhost:2038/api/Theloais' + theloaiId)
-        .then(successCallBack, errorCallBack);
+      var deferred = $q.defer();
+      $http.get('http://localhost:2038/api/Theloais/' + BantinId).then(function (res) {
+        deferred.resolve(res.data);
+      }, function (err) {
+        deferred.reject(err.data);
+      });
+      return deferred.promise;
     }
 
 

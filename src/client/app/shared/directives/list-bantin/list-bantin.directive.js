@@ -2,23 +2,42 @@
   'use strict';
 
   angular.module('app.homepage')
-    .directive('bantinTheloai', bantinTheloai);
+    .directive('listBantin', listBantin);
 
   /* @ngInject */
-  function bantinTheloai() {
+  function listBantin() {
     var directive = {
+      controller: listBantinController,
+      controllerAs: 'vm',
       restrict: 'EA',
       scope: {
-        Id: "="
+        theloai: "="
       },
-      templateUrl: 'app/shared/directives/bantin-theloai/bantin-theloai.html'
+      templateUrl: 'app/shared/directives/list-bantin/list-bantin.html'
     };
 
-    bantinTheloaiController.$inject = ['$scope', 'bantinService'];
+    listBantinController.$inject = ['$scope', 'theloaiService'];
 
-    function bantinTheloaiController($scope, bantinService) {
+    function listBantinController($scope, theloaiService) {
       var vm = this;
+      vm.theloai = $scope.theloai;
+      vm.bantins = {};
+      vm.news = {};
+      init();
 
+      function init() {
+
+        function errorCallback(err) {
+          console.log(err);
+        }
+
+        function succeedCallback(bantin) {
+          vm.bantins = bantin;
+          vm.news = vm.bantins.Bantins;
+        }
+
+        theloaiService.getTheloaiById(vm.theloai.Id).then(succeedCallback, errorCallback);
+      }
     }
     return directive;
   }
