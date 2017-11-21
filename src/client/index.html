@@ -2,127 +2,134 @@
 <html ng-app="app">
 
 <head>
-    <style>
-        /* This helps the ng-show/ng-hide animations start at the right place. */
-        /* Since Angular has this but needs to load, this gives us the class early. */
+  <style>
+    /* This helps the ng-show/ng-hide animations start at the right place. */
+    /* Since Angular has this but needs to load, this gives us the class early. */
 
-        .ng-hide {
-            display: none!important;
-        }
-    </style>
-    <title ng-bind="title">
-        PAG English
-    </title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-    <base href="/">
+    .ng-hide {
+      display: none!important;
+    }
 
-    <!-- build:css styles/lib.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
-    <link rel="stylesheet" href="/bower_components/bootstrap-horizon/bootstrap-horizon.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
+  </style>
+  <title ng-bind="title">
+    NEWSMarker
+  </title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <base href="/">
 
-    <!-- build:css styles/app.css -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="/.tmp/styles.css">
-    <!-- endinject -->
-    <!-- endbuild -->
+  <!-- build:css styles/lib.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+  <link rel="stylesheet" href="/bower_components/bootstrap-horizon/bootstrap-horizon.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/app.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/.tmp/styles.css">
+  <!-- endinject -->
+  <!-- endbuild -->
 </head>
 
 <body>
-    <ui-view></ui-view>
-    <script src="https://use.fontawesome.com/8a65852415.js"></script>
-    <!-- build:js js/lib.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/angular/angular.js"></script>
-    <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/bower_components/angular-jwt/dist/angular-jwt.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
-    <script src="/bower_components/moment/moment.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/toastr/toastr.js"></script>
-    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="/bower_components/ngstorage/ngStorage.js"></script>
-    <script src="/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <ui-view></ui-view>
+  <script src="https://use.fontawesome.com/8a65852415.js"></script>
+  <!-- build:js js/lib.js -->
+  <!-- bower:js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/angular-jwt/dist/angular-jwt.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+  <script src="/bower_components/moment/moment.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/bower_components/toastr/toastr.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="/bower_components/ngstorage/ngStorage.js"></script>
+  <script src="/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
-    <!-- build:js js/app.js -->
-    <!-- inject:js -->
-    <script src="/src/client/app/app.module.js"></script>
-    <script src="/src/client/app/components/admin/admin.module.js"></script>
-    <script src="/src/client/app/components/admin/bantin/bantin.module.js"></script>
-    <script src="/src/client/app/components/admin/comment/comment.module.js"></script>
-    <script src="/src/client/app/components/admin/hinhanh/hinhanh.module.js"></script>
-    <script src="/src/client/app/components/admin/theloai/theloai.module.js"></script>
-    <script src="/src/client/app/components/homepage/homepage.module.js"></script>
-    <script src="/src/client/app/components/layout/layout.module.js"></script>
-    <script src="/src/client/app/components/newspage/newspage.module.js"></script>
-    <script src="/src/client/app/components/theloaidetail/theloaidetail.module.js"></script>
-    <script src="/src/client/app/shared/blocks/exception/exception.module.js"></script>
-    <script src="/src/client/app/shared/blocks/logger/logger.module.js"></script>
-    <script src="/src/client/app/shared/blocks/router/router.module.js"></script>
-    <script src="/src/client/app/shared/directives/validatePass/widgets/widgets.module.js"></script>
-    <script src="/src/client/app/shared/services/service.module.js"></script>
-    <script src="/src/client/app/app.config.js"></script>
-    <script src="/src/client/app/app.route.js"></script>
-    <script src="/src/client/app/components/admin/admin.controller.js"></script>
-    <script src="/src/client/app/components/admin/admin.route.js"></script>
-    <script src="/src/client/app/components/admin/bantin/bantin.controller.js"></script>
-    <script src="/src/client/app/components/admin/bantin/bantin.route.js"></script>
-    <script src="/src/client/app/components/admin/comment/comment.controller.js"></script>
-    <script src="/src/client/app/components/admin/comment/comment.route.js"></script>
-    <script src="/src/client/app/components/admin/hinhanh/hinhanh.controller.js"></script>
-    <script src="/src/client/app/components/admin/hinhanh/hinhanh.route.js"></script>
-    <script src="/src/client/app/components/admin/theloai/theloai.controller.js"></script>
-    <script src="/src/client/app/components/admin/theloai/theloai.route.js"></script>
-    <script src="/src/client/app/components/homepage/homepage.controller.js"></script>
-    <script src="/src/client/app/components/homepage/homepage.route.js"></script>
-    <script src="/src/client/app/components/layout/layout.controller.js"></script>
-    <script src="/src/client/app/components/layout/layout.route.js"></script>
-    <script src="/src/client/app/components/newspage/newspage.controller.js"></script>
-    <script src="/src/client/app/components/newspage/newspage.route.js"></script>
-    <script src="/src/client/app/components/theloaidetail/theloaidetail.controller.js"></script>
-    <script src="/src/client/app/components/theloaidetail/theloaidetail.route.js"></script>
-    <script src="/src/client/app/shared/blocks/exception/exception-handler.provider.js"></script>
-    <script src="/src/client/app/shared/blocks/exception/exception.js"></script>
-    <script src="/src/client/app/shared/blocks/logger/logger.js"></script>
-    <script src="/src/client/app/shared/blocks/router/router-helper.provider.js"></script>
-    <script src="/src/client/app/shared/blocks/toastr/constants.js"></script>
-    <script src="/src/client/app/shared/blocks/toastr/toastr.config.js"></script>
-    <script src="/src/client/app/shared/directives/bantin-theloai/bantin-theloai.directive.js"></script>
-    <script src="/src/client/app/shared/directives/list-bantin/list-bantin.directive.js"></script>
-    <script src="/src/client/app/shared/directives/validatePass/validatePass.js"></script>
-    <script src="/src/client/app/shared/directives/validatePass/widgets/ht-img-person.directive.js"></script>
-    <script src="/src/client/app/shared/directives/validatePass/widgets/ht-widget-header.directive.js"></script>
-    <script src="/src/client/app/shared/services/auth.js"></script>
-    <script src="/src/client/app/shared/services/bantin.js"></script>
-    <script src="/src/client/app/shared/services/errorTranslator.js"></script>
-    <script src="/src/client/app/shared/services/grammar.js"></script>
-    <script src="/src/client/app/shared/services/hinhanh.js"></script>
-    <script src="/src/client/app/shared/services/lesson.js"></script>
-    <script src="/src/client/app/shared/services/question.js"></script>
-    <script src="/src/client/app/shared/services/score.js"></script>
-    <script src="/src/client/app/shared/services/test.js"></script>
-    <script src="/src/client/app/shared/services/testdetail.js"></script>
-    <script src="/src/client/app/shared/services/theloai.js"></script>
-    <script src="/src/client/app/shared/services/unit.js"></script>
-    <script src="/src/client/app/shared/services/user.js"></script>
-    <script src="/src/client/app/shared/services/vocabulary.js"></script>
-    <script src="/src/client/app/shared/test-helpers/mock-data.js"></script>
-    <!-- endinject -->
+  <!-- build:js js/app.js -->
+  <!-- inject:js -->
+  <script src="/src/client/app/app.module.js"></script>
+  <script src="/src/client/app/components/admin/admin.module.js"></script>
+  <script src="/src/client/app/components/admin/bantin/bantin.module.js"></script>
+  <script src="/src/client/app/components/admin/comment/comment.module.js"></script>
+  <script src="/src/client/app/components/admin/hinhanh/hinhanh.module.js"></script>
+  <script src="/src/client/app/components/admin/theloai/theloai.module.js"></script>
+  <script src="/src/client/app/components/admin/user/user.module.js"></script>
+  <script src="/src/client/app/components/homepage/homepage.module.js"></script>
+  <script src="/src/client/app/components/layout/layout.module.js"></script>
+  <script src="/src/client/app/components/newspage/newspage.module.js"></script>
+  <script src="/src/client/app/components/theloaidetail/theloaidetail.module.js"></script>
+  <script src="/src/client/app/shared/blocks/exception/exception.module.js"></script>
+  <script src="/src/client/app/shared/blocks/logger/logger.module.js"></script>
+  <script src="/src/client/app/shared/blocks/router/router.module.js"></script>
+  <script src="/src/client/app/shared/directives/validatePass/widgets/widgets.module.js"></script>
+  <script src="/src/client/app/shared/services/service.module.js"></script>
+  <script src="/src/client/app/app.config.js"></script>
+  <script src="/src/client/app/app.route.js"></script>
+  <script src="/src/client/app/components/admin/admin.controller.js"></script>
+  <script src="/src/client/app/components/admin/admin.route.js"></script>
+  <script src="/src/client/app/components/admin/bantin/bantin.controller.js"></script>
+  <script src="/src/client/app/components/admin/bantin/bantin.route.js"></script>
+  <script src="/src/client/app/components/admin/bantin/createbantin/createbantin.component.js"></script>
+  <script src="/src/client/app/components/admin/comment/comment.controller.js"></script>
+  <script src="/src/client/app/components/admin/comment/comment.route.js"></script>
+  <script src="/src/client/app/components/admin/hinhanh/createhinhanh/createhinhanh.component.js"></script>
+  <script src="/src/client/app/components/admin/hinhanh/hinhanh.controller.js"></script>
+  <script src="/src/client/app/components/admin/hinhanh/hinhanh.route.js"></script>
+  <script src="/src/client/app/components/admin/theloai/createtheloai/createtheloai.component.js"></script>
+  <script src="/src/client/app/components/admin/theloai/theloai.controller.js"></script>
+  <script src="/src/client/app/components/admin/theloai/theloai.route.js"></script>
+  <script src="/src/client/app/components/admin/user/user.controller.js"></script>
+  <script src="/src/client/app/components/admin/user/user.route.js"></script>
+  <script src="/src/client/app/components/homepage/homepage.controller.js"></script>
+  <script src="/src/client/app/components/homepage/homepage.route.js"></script>
+  <script src="/src/client/app/components/layout/layout.controller.js"></script>
+  <script src="/src/client/app/components/layout/layout.route.js"></script>
+  <script src="/src/client/app/components/newspage/newspage.controller.js"></script>
+  <script src="/src/client/app/components/newspage/newspage.route.js"></script>
+  <script src="/src/client/app/components/theloaidetail/theloaidetail.controller.js"></script>
+  <script src="/src/client/app/components/theloaidetail/theloaidetail.route.js"></script>
+  <script src="/src/client/app/shared/blocks/exception/exception-handler.provider.js"></script>
+  <script src="/src/client/app/shared/blocks/exception/exception.js"></script>
+  <script src="/src/client/app/shared/blocks/logger/logger.js"></script>
+  <script src="/src/client/app/shared/blocks/router/router-helper.provider.js"></script>
+  <script src="/src/client/app/shared/blocks/toastr/constants.js"></script>
+  <script src="/src/client/app/shared/blocks/toastr/toastr.config.js"></script>
+  <script src="/src/client/app/shared/directives/bantin-theloai/bantin-theloai.directive.js"></script>
+  <script src="/src/client/app/shared/directives/list-bantin/list-bantin.directive.js"></script>
+  <script src="/src/client/app/shared/directives/validatePass/validatePass.js"></script>
+  <script src="/src/client/app/shared/directives/validatePass/widgets/ht-img-person.directive.js"></script>
+  <script src="/src/client/app/shared/directives/validatePass/widgets/ht-widget-header.directive.js"></script>
+  <script src="/src/client/app/shared/services/auth.js"></script>
+  <script src="/src/client/app/shared/services/bantin.js"></script>
+  <script src="/src/client/app/shared/services/errorTranslator.js"></script>
+  <script src="/src/client/app/shared/services/grammar.js"></script>
+  <script src="/src/client/app/shared/services/hinhanh.js"></script>
+  <script src="/src/client/app/shared/services/lesson.js"></script>
+  <script src="/src/client/app/shared/services/question.js"></script>
+  <script src="/src/client/app/shared/services/score.js"></script>
+  <script src="/src/client/app/shared/services/test.js"></script>
+  <script src="/src/client/app/shared/services/testdetail.js"></script>
+  <script src="/src/client/app/shared/services/theloai.js"></script>
+  <script src="/src/client/app/shared/services/unit.js"></script>
+  <script src="/src/client/app/shared/services/user.js"></script>
+  <script src="/src/client/app/shared/services/vocabulary.js"></script>
+  <script src="/src/client/app/shared/test-helpers/mock-data.js"></script>
+  <!-- endinject -->
 
-    <!-- inject:templates:js -->
-    <!-- endinject -->
-    <!-- endbuild -->
+  <!-- inject:templates:js -->
+  <!-- endinject -->
+  <!-- endbuild -->
 </body>
 
 </html>

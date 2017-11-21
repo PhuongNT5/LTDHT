@@ -1,5 +1,5 @@
 (function () {
 
-    angular.module('app.hinhanh', []);
+  angular.module('app.hinhanh', []);
 
 })()

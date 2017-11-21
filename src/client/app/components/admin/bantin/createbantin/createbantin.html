@@ -1,0 +1,59 @@
+<div class="unitmanage">
+  <form class="form-horizontal">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Create New News</legend>
+      <div class="form-group">
+        <label for="inputType" class="col-md-4  control-label">Thể loại Id
+          <span class='require'>*</span>
+        </label>
+        <div class="col-md-4 ">
+          <select class="select-refresh form-control required" name="name" ng-model="vm.bantin.TheloaiId" required>
+            <option ng-repeat="theloai in vm.theloais" value="{{theloai.Id -1}}">{{theloai.TenTheloai}}</option>
+          </select>
+        </div>
+      </div>
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="textinput">Tên Bản tin</label>
+        <div class="col-md-4">
+          <input id="textinput" name="textinput" type="text" ng-model="vm.bantin.TenBantin" placeholder="Tên Bản tin" class="form-control input-md">
+
+        </div>
+      </div>
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="lastname">Tiêu đề</label>
+        <div class="col-md-4">
+          <input id="lastname" name="lastname" type="text" ng-model="vm.lesson.title" placeholder="Tiêu đề" class="form-control input-md">
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label">Nội dung</label>
+        <div class="col-md-4">
+          <textarea name="lastname" type="text" ng-model="vm.bantin.Noidung" placeholder="Nội dung" class="form-control input-md"></textarea>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="lastname">Tên tác giả</label>
+        <div class="col-md-4">
+          <input id="lastname" name="lastname" type="text" ng-model="vm.bantin.TenTacgia" placeholder="Tên tác giả" class="form-control input-md">
+
+        </div>
+      </div>
+      <!-- Button (Double) -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="button1id"></label>
+        <div class="col-md-8">
+          <button id="button1id" name="button1id" class="btn btn-success" ng-click="vm.createBantinn()">Create</button>
+          <button id="button2id" name="button2id" class="btn btn-danger" ng-class="vm.turn==0?'active':''" ng-click="vm.turnActive(0)">Cancel</button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
