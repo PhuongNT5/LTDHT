@@ -10,6 +10,11 @@
     init();
 
     function init() {
+      $(document).ready(function () {
+        $("#myBtn").click(function () {
+          $("#myModal").modal();
+        });
+      });
 
       function succeedCallback(theloais) {
         vm.theloais = theloais;

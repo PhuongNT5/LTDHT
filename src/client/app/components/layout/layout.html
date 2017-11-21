@@ -15,8 +15,9 @@
       <a style="color:white ; font-size:11px" class="btn btn-default btn-outline btn-circle collapsed signin" data-toggle="collapse"
         href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">
         <span class="glyphicon glyphicon-user" style="color:yellow;"></span>Login</a>
-      <a style="color:white ; font-size:11px" data-toggle="modal" class="btn btn-default btn-outline btn-circle register" href="#registerModal">
+      <a style="color:white ; font-size:11px" data-toggle="modal" class="btn btn-default btn-outline btn-circle register" id="myBtn">
         <span class="glyphicon glyphicon-user" style="color:yellow;"></span>Register</a>
+
       <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
         <form class="navbar-form navbar-right form-inline" role="form">
           <div class="form-group">
@@ -27,47 +28,56 @@
             <label class="sr-only" for="Password">Password</label>
             <input type="password" class="form-control" id="Password" placeholder="Password" required />
           </div>
-          <button type="submit" class="btn btn-success ">Sign in</button>
+          <button type="submit" class="btn btn-success #0be6af">Sign in</button>
         </form>
       </div>
-      <div class="modal hide" id="registerModal">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">✕</button>
-          <h3>Login to Website</h3>
-        </div>
-        <div class="modal-body" style="text-align:center;">
-          <div class="row-fluid">
-            <div class="span10 offset1">
-              <div id="modalTab">
-                <div class="tab-content">
-                  <div class="tab-pane active" id="login">
-                    <form method="post" action='' name="login_form">
-                      <p>
-                        <input type="text" class="span12" name="eid" id="email" placeholder="Email">
-                      </p>
-                      <p>
-                        <input type="password" class="span12" name="passwd" placeholder="Password">
-                      </p>
-                      <p>
-                        <button type="submit" class="btn btn-primary">Sign in</button>
-                        <a href="#forgotpassword" data-toggle="tab">Forgot Password?</a>
-                      </p>
-                    </form>
-                  </div>
-                  <div class="tab-pane fade" id="forgotpassword">
-                    <form method="post" action='' name="forgot_password">
-                      <p>Hey this stuff happens, send us your email and we'll reset it for you!</p>
-                      <input type="text" class="span12" name="eid" id="email" placeholder="Email">
-                      <p>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <a href="#login" data-toggle="tab">Wait, I remember it now!</a>
-                      </p>
-                    </form>
-                  </div>
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header" style="padding:35px 50px; background-color:#0be6af">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4>
+                <span class="glyphicon glyphicon-lock"></span> Register</h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+              <form role="form">
+                <div class="form-group">
+                  <label for="usrname">
+                    <span class="glyphicon glyphicon-user"></span> Username</label>
+                  <input type="text" class="form-control" id="usrname" placeholder="Enter email">
                 </div>
-              </div>
+                <div class="form-group">
+                  <label for="psw">
+                    <span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                  <input type="text" class="form-control" id="psw" placeholder="Enter password">
+                </div>
+                <div class="form-group">
+                  <label for="psw">
+                    <span class="glyphicon glyphicon-eye-open"></span>Confirm Password</label>
+                  <input type="text" class="form-control" id="psw" placeholder="Enter confirm password">
+                </div>
+                <div class="checkbox">
+                  <label style="color:#0be6af">
+                    <input type="checkbox" value="" checked>Forget Password</label>
+                </div>
+                <button type="submit" style="background-color:#0be6af" class="btn btn-success btn-block">
+                  <span class="glyphicon glyphicon-off"></span> Register</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+                <span class="glyphicon glyphicon-remove"></span> Cancel</button>
+              <p>Not a member?
+                <a href="#">Sign Up</a>
+              </p>
+              <p>Forgot
+                <a href="#">Password?</a>
+              </p>
             </div>
           </div>
+
         </div>
       </div>
     </nav>
