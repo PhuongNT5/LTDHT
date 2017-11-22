@@ -34,6 +34,9 @@
         function succeedCallback(bantin) {
           vm.bantins = bantin;
           vm.news = vm.bantins.Bantins;
+          vm.news.sort(function (a, b) {
+            return b.Id - a.Id
+          });
         }
 
         theloaiService.getTheloaiById(vm.theloai.Id).then(succeedCallback, errorCallback);

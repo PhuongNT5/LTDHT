@@ -196,11 +196,25 @@ body .no-padding {
   margin-right: 7px;
 }
 
-.col-md-6 {
+.col-md-6,
+.one-comment-content {
   float: right;
   width: 70%;
   margin-right: 15%;
   margin-top: -30px;
   background-color: #f6f6f6;
   display: inline-flex;
+}
+
+.one-comment-content {
+  height: 50px;
+  border: 1px solid #606060;
+  border-top: none;
+  .one-comment-content-detail {
+    float: right;
+  }
+}
+
+.one-comment-content:first-child {
+  margin-top: 30px;
 }

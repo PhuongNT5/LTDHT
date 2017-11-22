@@ -7,7 +7,7 @@
         <a style="color:white ; font-size:11px">
           <span class="glyphicon glyphicon-home" style="color:yellow;"></span>Man Thien-District 9 - HCM City</a>
         <a style="color:white ; font-size:11px">
-          <span class="glyphicon glyphicon-user" style="color:yellow;"></span>
+          <span class="glyphicon glyphicon-user" style="color:yellow;"></span>{{vm.username}}
         </a>
       </div>
 
@@ -22,18 +22,18 @@
         <form class="navbar-form navbar-right form-inline" role="form">
           <div class="form-group">
             <label class="sr-only" for="Email">Email</label>
-            <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required />
+            <input type="email" class="form-control" ng-model="vm.email" id="Email" placeholder="Email" autofocus required />
           </div>
           <div class="form-group">
             <label class="sr-only" for="Password">Password</label>
-            <input type="password" class="form-control" id="Password" placeholder="Password" required />
+            <input type="password" class="form-control" id="Password" ng-model="vm.password" placeholder="Password" required />
           </div>
           <button type="submit" class="btn btn-success #0be6af" ng-click="vm.signin()">Sign in</button>
         </form>
       </div>
+
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
-
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header" style="padding:35px 50px; background-color:#0be6af">
@@ -62,7 +62,7 @@
                   <label style="color:#0be6af">
                     <input type="checkbox" value="" checked>Forget Password</label>
                 </div>
-                <button type="submit" style="background-color:#0be6af" class="btn btn-success btn-block">
+                <button type="submit" style="background-color:#0be6af" class="btn btn-success btn-block" data-dismiss="modal">
                   <span class="glyphicon glyphicon-off"></span> Register</button>
               </form>
             </div>

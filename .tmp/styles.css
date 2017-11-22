@@ -53,6 +53,8 @@
     margin-right: 50px; }
   .pageContainer .search {
     margin-bottom: 10px; }
+  .pageContainer .slide-down {
+    margin-left: 25% !important; }
 
 .homepage {
   height: 90%;
@@ -570,7 +572,8 @@ body .no-padding {
 .status-upload form button > i {
   margin-right: 7px; }
 
-.col-md-6 {
+.col-md-6,
+.one-comment-content {
   float: right;
   width: 70%;
   margin-right: 15%;
@@ -579,6 +582,15 @@ body .no-padding {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex; }
+
+.one-comment-content {
+  height: 50px;
+  border: 1px solid #606060; }
+  .one-comment-content .one-comment-content-detail {
+    float: right; }
+
+.one-comment-content:first-child {
+  margin-top: 30px; }
 
 .usermanage {
   width: 100%;
@@ -606,7 +618,8 @@ body .no-padding {
     border-bottom: 8px solid #448aff;
     margin-top: 30px;
     width: 90%;
-    margin-left: -20px; }
+    margin-left: -20px;
+    margin-right: 20px; }
   .usermanage td.check {
     text-align: center; }
   .usermanage .table-striped > tbody > tr:nth-of-type(odd) {
@@ -641,5 +654,8 @@ body .no-padding {
     width: 100px; }
   .usermanage .row-content img {
     width: 50px; }
+
+.newbantin {
+  background-color: #808080; }
 
 /*#endregion */
