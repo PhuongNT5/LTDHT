@@ -580,4 +580,66 @@ body .no-padding {
   display: -ms-inline-flexbox;
   display: inline-flex; }
 
+.usermanage {
+  width: 100%;
+  margin-left: -80px;
+  font-weight: 400 !important; }
+  .usermanage a.del {
+    background: #d9534f;
+    border-radius: 2px;
+    width: 35px;
+    height: 28px;
+    padding-left: 12px;
+    line-height: 10px; }
+  .usermanage a.edit {
+    padding-left: 10px;
+    background: #337ab7;
+    color: #fff;
+    border-radius: 2px;
+    border: none; }
+  .usermanage tr.row-name {
+    font-size: 18px;
+    color: #448aff; }
+  .usermanage tr.row-content {
+    color: #6c7173; }
+  .usermanage table {
+    border-bottom: 8px solid #448aff;
+    margin-top: 30px;
+    width: 90%;
+    margin-left: -20px; }
+  .usermanage td.check {
+    text-align: center; }
+  .usermanage .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #F0F2F2 !important; }
+  .usermanage a.btn-danger:hover {
+    background: #de6c69; }
+  .usermanage a.btn-danger {
+    background: #d9534f; }
+  .usermanage a.btn-top {
+    background: #448aff;
+    color: #fff;
+    border: 1px solid #448aff;
+    padding: 7px 10px;
+    border-radius: 4px; }
+  .usermanage a.btn-top:hover {
+    text-decoration: none;
+    box-shadow: 3px 3px 5px #222;
+    transition: box-shadow 0.5s; }
+  .usermanage .btn-success:hover {
+    color: #fff;
+    background-color: #141D25 !important;
+    border-color: #448AFF !important; }
+  .usermanage .btn-success {
+    color: #fff;
+    background-color: #448AFF;
+    border-color: #448AFF; }
+  .usermanage legend {
+    height: 50px;
+    font-size: 30px;
+    color: #448AFF; }
+  .usermanage #button1id {
+    width: 100px; }
+  .usermanage .row-content img {
+    width: 50px; }
+
 /*#endregion */

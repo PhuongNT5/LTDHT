@@ -6,8 +6,11 @@
   function layoutController($q, $http, $state, theloaiService) {
     var vm = this;
     vm.theloais = {}
-    vm.so = 9;
+    vm.username = '';
+    vm.password = '';
+    vm.warning = {};
     init();
+    vm.signin = signin;
 
     function init() {
       $(document).ready(function () {
@@ -24,6 +27,14 @@
         console.log(err);
       }
       theloaiService.getTheloais().then(succeedCallback, errorCallback);
+    }
+
+    function signin() {
+      var data = {
+        username: vm.username,
+        password: vm.password,
+        grant_type: 'password'
+      };
     }
   }
 })();
