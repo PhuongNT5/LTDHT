@@ -7,7 +7,8 @@
     var vm = this;
     vm.turnActive = turnActive;
     vm.turn = 0;
-    vm.theloais = {}
+    vm.theloais = {};
+    vm.deleteTheloai = deleteTheloai;
 
     function turnActive(state) {
       vm.turn = state;
@@ -32,12 +33,17 @@
         $state.go('admin.theloai', {
           reload: true
         });
-        theloaiService.loadTheloais().then(function (theloai) {
+        theloaiService.getTheloais().then(function (theloai) {
           vm.theloais = theloai;
         }, function (err) {
           console.log(err);
         });
       }
+
+      function errorCallback(err) {
+        console.log(err);
+      }
+      theloaiService.deleteTheloai(theloaiId).then(succeedCallback, errorCallback);
     }
 
     //     function errorCallback(err) {

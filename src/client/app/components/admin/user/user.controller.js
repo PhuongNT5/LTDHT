@@ -15,17 +15,11 @@
     init();
 
     function init() {
-      console.log(123);
-
-      function succeedCallback(user) {
-        vm.user = user;
-      }
-
       function errorCallback(err) {
         console.log(err);
       }
       userService.loadUsers().then(function (user) {
-        vm.user = user.user;
+        vm.user = user;
       }, errorCallback);
     }
   }

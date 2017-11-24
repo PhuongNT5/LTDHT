@@ -16,7 +16,7 @@
 
     function loadBantins() {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Bantins').then(function (res) {
+      $http.get('http://localhost:2038/api/Bantins/GetBantins').then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -26,7 +26,7 @@
 
     function createBantin(group) {
       var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/Bantins', group)
+      $http.post('http://localhost:2038/api/Bantins/PostBantin', group)
         .then(function (res) {
           deferred.resolve(res.data);
         }, function (err) {
@@ -37,7 +37,7 @@
 
     function deleteBantin(BantinId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Bantins' + BantinId).then(function (res) {
+      $http.get('http://localhost:2038/api/Bantins/DeleteBantin' + BantinId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -48,7 +48,7 @@
 
     function getBantinById(BantinId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Bantins/' + BantinId).then(function (res) {
+      $http.get('http://localhost:2038/api/Bantins/GetBantin' + BantinId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

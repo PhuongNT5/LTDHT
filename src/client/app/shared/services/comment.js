@@ -15,7 +15,7 @@
 
     function getComments() {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Comments').then(function (res) {
+      $http.get('http://localhost:2038/api/Comments/GetComments').then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -25,7 +25,7 @@
 
     function createComment(group) {
       var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/Comments', group)
+      $http.post('http://localhost:2038/api/Comments/PostComment', group)
         .then(function (res) {
           deferred.resolve(res.data);
         }, function (err) {
@@ -36,7 +36,7 @@
 
     function deleteComment(commentId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Comments/' + commentId).then(function (res) {
+      $http.get('http://localhost:2038/api/Comments/DeleteComment' + commentId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -47,7 +47,7 @@
 
     function getCommentById(commentId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Comments/' + commentId).then(function (res) {
+      $http.get('http://localhost:2038/api/Comments/GetComment' + commentId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

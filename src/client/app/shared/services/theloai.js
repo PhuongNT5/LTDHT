@@ -16,7 +16,7 @@
 
     function getTheloais() {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Theloais').then(function (res) {
+      $http.get('http://localhost:2038/api/Theloais/GetTheloais').then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -25,30 +25,49 @@
     }
 
     function createTheloai(group) {
-      var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/Theloais', group)
-        .then(function (res) {
-          deferred.resolve(res.data);
-        }, function (err) {
-          deferred.reject(err.data);
-        })
-      return deferred.promise;
+      function successCallBack(response) {
+        console.log("success");
+      }
+
+      function errorCallBack(response) {
+        return response;
+      }
+      var request = "";
+      for (var key in group) {
+        request += key + "=" + group[key] + "&";
+      }
+
+      request = request.slice(0, request.length - 1);
+
+      return $http.post('http://localhost:2038/api/Theloais/CreateTheloai?' + request).then(successCallBack, errorCallBack);
+
+      // return $http({
+      //   method: 'POST',
+      //   url: 'http://localhost:2038/api/Theloais/CreateTheloai',
+      //   headers: {
+      //     'Content-Type': 'application/json; charset=utf-8',
+      //     'Access-Control-Allow-Methods': 'Content-Type',
+      //   },
+      //   data: group
+      // }).then(successCallBack, errorCallBack);
     }
 
     function deleteTheloai(theloaiId) {
-      var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Theloais/' + BantinId).then(function (res) {
-        deferred.resolve(res.data);
-      }, function (err) {
-        deferred.reject(err.data);
-      });
-      return deferred.promise;
-    }
+      function successCallBack(response) {
+        return response;
+      }
 
+      function errorCallBack(response) {
+        return response;
+      }
+
+      return $http.get('http://localhost:2038/api/Theloais/Xoatheloai/' + theloaiId)
+        .then(successCallBack, errorCallBack);
+    }
 
     function getTheloaiById(theloaiId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Theloais/' + theloaiId).then(function (res) {
+      $http.get('http://localhost:2038/api/Theloais/GetTheloai' + theloaiId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

@@ -1,9 +1,9 @@
 (function () {
   angular.module('app.newspage')
     .controller('newspageController', newspageController);
-  newspageController.$inject = ['$q', '$http', '$state', 'bantinService', 'theloaiService'];
+  newspageController.$inject = ['$q', '$http', '$state', '$localStorage', 'bantinService', 'theloaiService', 'commentService'];
 
-  function newspageController($q, $http, $state, bantinService, theloaiService) {
+  function newspageController($q, $http, $state, $localStorage, bantinService, theloaiService, commentService) {
     var vm = this;
     vm.bantin = {};
     vm.theloai = {};
@@ -32,9 +32,20 @@
       bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);
 
     }
+    var data = {
+      Noidung: vm.comment,
+      UserID: $localStorage.user.Id,
+      BantinID: bantinId
+    }
 
     function addComment() {
-
+      commentService.createComment(data).then(function (comment) {
+        $state.go('layout.newspage', {
+          reload: true
+        });
+      }, function (err) {
+        console.log(err);
+      });
     }
   }
 })();

@@ -16,7 +16,7 @@
 
     function loadUsers() {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Users').then(function (res) {
+      $http.get('http://localhost:2038/api/Users/GetUsers').then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -26,7 +26,7 @@
 
     function createUser(data) {
       var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/Users', data).then(function (res) {
+      $http.post('http://localhost:2038/api/Users/PostUser', data).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -37,7 +37,7 @@
 
     function deleteUser(userId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Users/' + userId).then(function (res) {
+      $http.get('http://localhost:2038/api/Users/DeleteUser' + userId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -47,7 +47,7 @@
 
     function getUserById(userId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Users/' + userId).then(function (res) {
+      $http.get('http://localhost:2038/api/Users/GetUser' + userId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

@@ -13,12 +13,14 @@
 
       <!-- <a class="btn btn-default btn-outline btn-circle collapsed signin"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a> -->
       <a style="color:white ; font-size:11px" class="btn btn-default btn-outline btn-circle collapsed signin" data-toggle="collapse"
-        href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">
+        href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2" ng-if="vm.username == ''">
         <span class="glyphicon glyphicon-user" style="color:yellow;"></span>Login</a>
       <a style="color:white ; font-size:11px" data-toggle="modal" class="btn btn-default btn-outline btn-circle register" id="myBtn">
         <span class="glyphicon glyphicon-user" style="color:yellow;"></span>Register</a>
+      <a style="color:white ; font-size:11px" data-toggle="modal" class="btn btn-default btn-outline btn-circle logout" id="myBtn">
+        <span class="glyphicon glyphicon-user" style="color:yellow;" ng-click="vm.logout()"></span>Logout</a>
 
-      <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
+      <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2" ng-if="vm.username == ''">
         <form class="navbar-form navbar-right form-inline" role="form">
           <div class="form-group">
             <label class="sr-only" for="Email">Email</label>

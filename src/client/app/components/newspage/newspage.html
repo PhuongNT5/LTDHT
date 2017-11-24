@@ -27,9 +27,7 @@
     <div class="comment-content">
       <div class="row">
         <div class="col-md-6">
-          <div class="user-avatar">
-            <img src="../../assets/images/user.png">
-          </div>
+
           <div class="widget-area no-padding blank">
             <div class="status-upload">
               <form>
@@ -45,15 +43,37 @@
 
       </div>
     </div>
-    <div class="list-comment" ng-repeat="cmt in vm.comments">
-      <div class="one-comment-content">
-        <div class="username">
-          <h4>{{cmt.User.Username}}</h4>
-        </div>
-        <div class="one-comment-content-detail">
-          <p>{{cmt.Noidung}}</p>
-        </div>
-      </div>
+    <!-- Contenedor Principal -->
+    <div class="comments-container">
+
+      <ul id="comments-list" class="comments-list" ng-repeat="cmt in vm.comments">
+        <li>
+          <div class="comment-main-level">
+            <!-- Avatar -->
+            <div class="comment-avatar" ng-if="cmt.User.LinkAvatar != null">
+              <img src="{{cmt.User.LinkAvatar}}" alt="">
+            </div>
+            <div class="user-avatar" ng-if="cmt.User.LinkAvatar == null">
+              <img src="../../assets/images/user.png">
+            </div>
+            <!-- Contenedor del Comentario -->
+            <div class="comment-box">
+              <div class="comment-head">
+                <h6 class="comment-name by-author">
+                  <a href="">{{cmt.User.Username}}</a>
+                </h6>
+                <span>hace 20 minutos</span>
+                <i class="fa fa-reply"></i>
+                <i class="fa fa-heart"></i>
+              </div>
+              <div class="comment-content">
+                {{cmt.Noidung}}
+              </div>
+            </div>
+          </div>
+          <!-- Respuestas de los comentarios -->
+        </li>
+      </ul>
     </div>
   </div>
 </div>

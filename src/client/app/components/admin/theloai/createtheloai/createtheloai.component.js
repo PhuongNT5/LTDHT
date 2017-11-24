@@ -7,13 +7,16 @@ angular.module('app.admin')
 
     }
   });
-createtheloaiController.$inject = ['$q', '$http', '$state', '$scope', 'theloaiService'];
+createtheloaiController.$inject = ['$q', '$http', '$state', '$scope', '$location', 'theloaiService'];
 
-function createtheloaiController($q, $http, $state, $scope, theloaiService) {
+function createtheloaiController($q, $http, $state, $scope, $location, theloaiService) {
   var vm = this;
+  vm.theloai = {};
   vm.createTheloai = createTheloai;
   // init();
   function createTheloai() {
+    location.reload();
+
     function successCallBack(response) {
       $state.go('admin.theloai', {
         reload: true

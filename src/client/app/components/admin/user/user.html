@@ -12,21 +12,17 @@
       <tr class="row-name">
         <th>Id</th>
         <th>Email</th>
-        <th>Full name</th>
-        <th>Birthday</th>
-        <th>Adress</th>
-        <th>Phone Number</th>
+        <th> Username</th>
+        <th>Password</th>
         <th>Settings</th>
       </tr>
     </thead>
     <tbody>
       <tr class="row-content" ng-repeat="x in vm.user track by $index">
         <td>1</td>
-        <td>{{x.email}}</td>
-        <td>{{x.firstname}}{{x.lastname}}</td>
-        <td>{{x.birthday}}</td>
-        <td>{{x.address}}</td>
-        <td>{{x.phone}}</td>
+        <td>{{x.Email}}</td>
+        <td>{{x.Username}}</td>
+        <td>{{x.Password}}</td>
         <td>
           <a class="btn btn-danger edit " href="path/to/settings " aria-label="Settings ">
             <i class="fa fa-trash " aria-hidden="true "></i>

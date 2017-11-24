@@ -7,7 +7,7 @@
     var vm = this;
     vm.turnActive = turnActive;
     vm.turn = 0;
-    vm.bantin = {}
+    vm.bantins = {}
 
     function turnActive(state) {
       vm.turn = state;
