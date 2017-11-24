@@ -11,9 +11,11 @@ createbantinController.$inject = ['$q', '$http', '$state', '$scope', 'theloaiSer
 
 function createbantinController($q, $http, $state, $scope, theloaiService, bantinService) {
   var vm = this;
+  vm.bantin = {};
   vm.theloais = {};
   vm.createBantin = createBantin;
   init();
+  vm.bantin.TheloaiId = 8;
 
   function init() {
     function errorCallBack(err) {
@@ -25,6 +27,8 @@ function createbantinController($q, $http, $state, $scope, theloaiService, banti
   }
 
   function createBantin() {
+    console.log(vm.bantin)
+
     function successCallBack(response) {
       $state.go('admin.bantin', {
         reload: true

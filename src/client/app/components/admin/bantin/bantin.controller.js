@@ -8,6 +8,7 @@
     vm.turnActive = turnActive;
     vm.turn = 0;
     vm.bantins = {}
+    vm.deleteBantin = deleteBantin;
 
     function turnActive(state) {
       vm.turn = state;

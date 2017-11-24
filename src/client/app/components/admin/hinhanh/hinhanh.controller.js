@@ -11,7 +11,6 @@
 
     function turnActive(state) {
       vm.turn = state;
-      console.log(vm.turn);
     }
     init();
 

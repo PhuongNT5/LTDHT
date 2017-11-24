@@ -25,19 +25,27 @@
     }
 
     function createBantin(group) {
-      var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/Bantins/PostBantin', group)
-        .then(function (res) {
-          deferred.resolve(res.data);
-        }, function (err) {
-          deferred.reject(err.data);
-        })
-      return deferred.promise;
+      function successCallBack(response) {
+        return response;
+      }
+
+      function errorCallBack(response) {
+        return response;
+      }
+      var request = "";
+      for (var key in group) {
+        request += key + "=" + group[key] + "&";
+      }
+
+      request = request.slice(0, request.length - 1);
+
+      return $http.post('http://localhost:2038/api/Bantins/PostBantin/' + group).then(successCallBack, errorCallBack);
+
     }
 
     function deleteBantin(BantinId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Bantins/DeleteBantin' + BantinId).then(function (res) {
+      $http.get('http://localhost:2038/api/Bantins/DeleteBantin/' + BantinId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);
@@ -48,7 +56,7 @@
 
     function getBantinById(BantinId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Bantins/GetBantin' + BantinId).then(function (res) {
+      $http.get('http://localhost:2038/api/Bantins/GetBantin/' + BantinId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

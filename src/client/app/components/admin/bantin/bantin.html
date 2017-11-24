@@ -1,6 +1,6 @@
 <create-bantin ng-if="vm.turn==1"></create-bantin>
 <div class="usermanage">
-  <h2 style="color: #448aff;text-align: center;"> LIST NEWS </h2>
+  <h2 style="color: #448aff;text-align: center; margin-right:25%;"> LIST NEWS </h2>
   <hr>
   <table class="table table-striped">
     <div class="dropdown">
@@ -24,7 +24,7 @@
     <td>{{x.TenBantin}}</td>
     <td>{{x.Noidung}}</td>
     <td>
-      <a class="btn btn-danger edit " ng-click="deleteBantin(x.id)" aria-label="Settings ">
+      <a class="btn btn-danger edit " ng-click="vm.deleteBantin(x.Id)" aria-label="Settings ">
         <i class="fa fa-trash " aria-hidden="true "></i>
       </a> &nbsp
       <a class="btn btn-info edit " href="path/to/settings " aria-label="Settings ">

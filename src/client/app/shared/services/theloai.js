@@ -26,7 +26,7 @@
 
     function createTheloai(group) {
       function successCallBack(response) {
-        console.log("success");
+        return response;
       }
 
       function errorCallBack(response) {
@@ -67,7 +67,7 @@
 
     function getTheloaiById(theloaiId) {
       var deferred = $q.defer();
-      $http.get('http://localhost:2038/api/Theloais/GetTheloai' + theloaiId).then(function (res) {
+      $http.get('http://localhost:2038/api/Theloais/GetTheloai/' + theloaiId).then(function (res) {
         deferred.resolve(res.data);
       }, function (err) {
         deferred.reject(err.data);

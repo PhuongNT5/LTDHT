@@ -1,6 +1,6 @@
 angular.module('app.admin')
   .component('createUser', {
-    templateUrl: 'app/components/admin/usermanage/createuser/createuser.html',
+    templateUrl: 'app/components/admin/user/createuser/createuser.html',
     controller: createuserController,
     controllerAs: 'vm',
     bindings: {
@@ -23,21 +23,17 @@ function createuserController($q, $http, $state, $scope, userService) {
   function validateForm() {
     var isValid = true;
 
-    if (!vm.user.username || vm.user.username && vm.user.username.length < 6) {
+    if (!vm.user.username || vm.user.Username && vm.user.Username.length < 6) {
       toastr.error(err);
       isValid = false;
     }
 
-    if (!vm.user.email) {
+    if (!vm.user.Email) {
       toastr.error(err);
       isValid = false;
     }
 
-    if (!vm.user.password || vm.user.password.length == 0) {
-      toastr.error(err);
-      isValid = false;
-    }
-    if (!vm.user.phone || vm.user.phone.length > 11) {
+    if (!vm.user.Password || vm.user.Password.length == 0) {
       toastr.error(err);
       isValid = false;
     }

@@ -27,36 +27,6 @@ function createhinhanhController($q, $http, $state, $scope, hinhanhService) {
 
   function validateForm() {
     var isValid = true;
-
-    if (!vm.user.username || vm.user.username && vm.user.username.length < 6) {
-      toastr.error(err);
-      isValid = false;
-    }
-
-    if (!vm.user.email) {
-      toastr.error(err);
-      isValid = false;
-    }
-
-    if (!vm.user.lastname || vm.user.lastname.length == 0) {
-      toastr.error(err);
-      isValid = false;
-    }
-
-    if (!vm.user.password || vm.user.password.length == 0) {
-      toastr.error(err);
-      isValid = false;
-    }
-    if (!vm.user.phone || vm.user.phone.length > 11) {
-      toastr.error(err);
-      isValid = false;
-    }
-
-    if (!vm.user.confirmPassword || vm.user.confirmPassword != vm.user.password) {
-      toastr.error(err);
-      isValid = false;
-    }
-
     return isValid;
   }
 
