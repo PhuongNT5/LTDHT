@@ -7,42 +7,46 @@ angular.module('app.admin')
 
     }
   });
-createhinhanhController.$inject = ['$q', '$http', '$state', '$scope', 'hinhanhService'];
+createhinhanhController.$inject = ['$q', '$http', '$state', '$location', '$scope', 'hinhanhService'];
 
-function createhinhanhController($q, $http, $state, $scope, hinhanhService) {
+function createhinhanhController($q, $http, $state, $scope, $location, hinhanhService) {
   var vm = this;
-  vm.hinhanh = {};
+  vm.anhBantin = {};
   vm.createHinhanh = createHinhanh;
 
   function turnActive(state) {
     vm.turn = state;
-    console.log(vm.turn);
-  }
-
-  function createHinhanh() {
-    if (validateForm()) {
-      hinhanhService.createHinhanh(vm.hinhanh).then(successCallBack, errorCallBack);;
-    }
   }
 
   function validateForm() {
     var isValid = true;
+    if (!vm.anhBantin.Anh) {
+      toastr.error("Chua nhap Linkanh");
+      isValid = false;
+    }
+
     return isValid;
   }
 
-  function successCallBack(response) {
-    $state.go('admin.hinhanh');
-    hinhanhService.createHinhanh(vm.hinhanh).then(function (hinhanh) {
-      vm.hinhanh = hinhanh;
-    }, function (err) {
-      console.log(err);
-    });;
-  }
 
-  function errorCallBack(err) {
-    if (err) {
-      for (var i = 0; i < err.Errors.length; i++) {
-        toastr.error(err.Errors[i]);
+  function createHinhanh() {
+    if (validateForm()) {
+      hinhanhService.createHinhanh(vm.anhBantin).then(successCallBack, errorCallBack);;
+    }
+
+    function successCallBack(response) {
+      toastr.success("Tạo thành công!");
+      $state.go('admin.hinhanh', {
+        reload: true
+      });
+      location.reload();
+    }
+
+    function errorCallBack(err) {
+      if (err) {
+        for (var i = 0; i < err.Errors.length; i++) {
+          toastr.error(err.Errors[i]);
+        }
       }
     }
   }

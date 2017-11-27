@@ -26,15 +26,22 @@
     }
 
     function createHinhanh(group) {
-      var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/anhBantins/PostAnhBantin', group)
-        .then(function (res) {
-          deferred.resolve(res.data);
-          console.log("success");
-        }, function (err) {
-          deferred.reject(err.data);
-        })
-      return deferred.promise;
+      function successCallBack(response) {
+        return response;
+      }
+
+      function errorCallBack(response) {
+        return response;
+      }
+      var request = "";
+      for (var key in group) {
+        request += key + "=" + group[key] + "&";
+      }
+
+      request = request.slice(0, request.length - 1);
+
+      return $http.post('http://localhost:2038/api/AnhBantins/PostAnhBantin?' + request).then(successCallBack, errorCallBack);
+
     }
 
     function deleteHinhanh(hinhanhId) {
@@ -46,7 +53,7 @@
         return response;
       }
 
-      return $http.get('http://localhost:2038/api/anhBantins/DeleteAnhBantin' + hinhanhId)
+      return $http.get('http://localhost:2038/api/anhBantins/DeleteAnhBantin/' + hinhanhId)
         .then(successCallBack, errorCallBack);
     }
 

@@ -31,6 +31,7 @@
         $state.go('admin.bantin', {
           reload: true
         });
+        toastr.success("Delete Thành công");
         bantinService.loadBantins().then(function (bantin) {
           vm.bantins = bantin;
         }, function (err) {

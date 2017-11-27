@@ -2,7 +2,7 @@
   <div class="hotnews">
     <div class="left-hotnews">
       <a href="/newspage/{{vm.bantins[0].Id}}">
-        <img src="{{vm.bantins[0].Anh[1].Anh}}">
+        <img src="{{vm.bantins[0].Anh[0].Anh}}">
       </a>
       <div class="title-new">
         <h2>{{vm.bantins[0].TenBantin}}</h2>
@@ -46,29 +46,32 @@
                   <a href="/newspage/{{vm.bantins[3].Id" class="thumbnail">
                     <img src="{{vm.bantins[3].Anh[0].Anh}}" alt="Image" style="max-width:100%;">
                   </a>
-                  <p>{{vm.bantins[3].TenBantin}}</p>
+                  <a>{{vm.bantins[3].TenBantin}}</a>
                 </div>
                 <div class="col-md-3">
                   <a href="/newspage/{{vm.bantins[4].Id" class="thumbnail">
                     <img src="{{vm.bantins[4].Anh[0].Anh}}" alt="Image" style="max-width:100%;">
                   </a>
+                  <a href="/newspage/{{vm.bantins[4].Id">{{vm.bantins[4].TenBantin}}</a>
                 </div>
                 <div class="col-md-3">
                   <a href="/newspage/{{vm.bantins[5].Id" class="thumbnail">
                     <img src="{{vm.bantins[5].Anh[0].Anh}}" alt="Image" style="max-width:100%;">
                   </a>
+                  <a href="/newspage/{{vm.bantins[5].Id">{{vm.bantins[5].TenBantin}}</a>
                 </div>
                 <div class="col-md-3">
                   <a href="/newspage/{{vm.bantins[6].Id" class="thumbnail">
                     <img src="{{vm.bantins[6].Anh[0].Anh}}" alt="Image" style="max-width:100%;">
                   </a>
+                  <a href="/newspage/{{vm.bantins[6].Id">{{vm.bantins[6].TenBantin}}</a>
                 </div>
               </div>
               <!--.row-->
             </div>
             <!--.item-->
 
-            <div class="item">
+            <!-- <div class="item">
               <div class="row">
                 <div class="col-md-3">
                   <a href="#" class="thumbnail">
@@ -92,22 +95,22 @@
                 </div>
               </div>
               <!--.row-->
-            </div>
-            <!--.item-->
+          </div> -->
+          <!--.item-->
 
-          </div>
-          <!--.carousel-inner-->
-          <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
-          <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
         </div>
-        <!--.Carousel-->
-
+        <!--.carousel-inner-->
+        <a data-slide="prev" href="#Carousel" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#Carousel" class="right carousel-control">›</a>
       </div>
+      <!--.Carousel-->
+
     </div>
   </div>
-  <!--.container-->
-  <div class="bantin" ng-repeat="theloai in vm.theloais">
-    <list-bantin theloai="theloai"></list-bantin>
-  </div>
+</div>
+<!--.container-->
+<div class="bantin" ng-repeat="theloai in vm.theloais">
+  <list-bantin theloai="theloai"></list-bantin>
+</div>
 </div>
 </div>

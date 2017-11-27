@@ -1,9 +1,9 @@
 (function () {
   angular.module('app.newspage')
     .controller('newspageController', newspageController);
-  newspageController.$inject = ['$q', '$http', '$state', '$localStorage', 'bantinService', 'theloaiService', 'commentService'];
+  newspageController.$inject = ['$q', '$http', '$state', '$localStorage', '$location', 'bantinService', 'theloaiService', 'commentService'];
 
-  function newspageController($q, $http, $state, $localStorage, bantinService, theloaiService, commentService) {
+  function newspageController($q, $http, $state, $localStorage, $location, bantinService, theloaiService, commentService) {
     var vm = this;
     vm.bantin = {};
     vm.theloai = {};
@@ -12,6 +12,7 @@
     var theloaiId;
     var bantinNext = bantinId + 1;
     vm.addComment = addComment;
+    vm.message = '';
     init();
 
     function init() {
@@ -32,20 +33,27 @@
       bantinService.getBantinById(bantinId).then(succeedCallback, errorCallback);
 
     }
-    var data = {
-      Noidung: vm.comment,
-      UserID: $localStorage.user.Id,
-      BantinID: bantinId
-    }
 
     function addComment() {
-      commentService.createComment(data).then(function (comment) {
-        $state.go('layout.newspage', {
-          reload: true
+      if ($localStorage.user != null) {
+        var data = {
+          Noidung: vm.comment,
+          UserID: $localStorage.user.Id,
+          BantinID: bantinId
+        }
+        commentService.createComment(data).then(function (comment) {
+          $state.go('layout.newspage', {
+            reload: true
+          });
+          location.reload();
+        }, function (err) {
+          console.log(err);
         });
-      }, function (err) {
-        console.log(err);
-      });
+      } else {
+        vm.message = "Đăng nhập trước khi bình luận";
+        toastr.error(vm.message);
+      }
+
     }
   }
 })();

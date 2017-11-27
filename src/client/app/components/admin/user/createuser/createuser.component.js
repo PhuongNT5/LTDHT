@@ -23,25 +23,21 @@ function createuserController($q, $http, $state, $scope, userService) {
   function validateForm() {
     var isValid = true;
 
-    if (!vm.user.username || vm.user.Username && vm.user.Username.length < 6) {
-      toastr.error(err);
+    if (!vm.user.usernames) {
+      toastr.error("Chưa nhập Username");
       isValid = false;
     }
 
     if (!vm.user.Email) {
-      toastr.error(err);
+      toastr.error("Chưa nhập email");
       isValid = false;
     }
 
-    if (!vm.user.Password || vm.user.Password.length == 0) {
-      toastr.error(err);
+    if (!vm.user.Password || vm.user.Password.length < 6) {
+      toastr.error(" Mật khẩu phải 6 ký tự trở lên");
       isValid = false;
     }
 
-    if (!vm.user.confirmPassword || vm.user.confirmPassword != vm.user.password) {
-      toastr.error(err);
-      isValid = false;
-    }
     return isValid;
   }
 

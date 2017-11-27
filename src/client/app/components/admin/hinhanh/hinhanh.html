@@ -12,6 +12,7 @@
 <thead>
   <tr class="row-name">
     <th>Id</th>
+    <th>Id Bantin</th>
     <th>Ảnh</th>
     <th>Mo ta</th>
     <th>Settings</th>
@@ -20,12 +21,13 @@
 <tbody>
   <tr class="row-content" ng-repeat="x in vm.hinhanhs track by $index">
     <td>{{x.Id}}</td>
+    <td>{{x.BantinID}}</td>
     <td>
       <img src="{{x.Anh}}" style="width:20px; height:20px;">
     </td>
     <td>{{x.Mota}}</td>
     <td>
-      <a class="btn btn-danger edit " ng-click="deleteHinhanh(x.id)" aria-label="Settings ">
+      <a class="btn btn-danger edit " ng-click="vm.deleteHinhanh(x.Id)" aria-label="Settings ">
         <i class="fa fa-trash " aria-hidden="true "></i>
       </a> &nbsp
       <a class="btn btn-info edit " href="path/to/settings " aria-label="Settings ">

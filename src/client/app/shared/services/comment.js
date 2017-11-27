@@ -24,14 +24,21 @@
     }
 
     function createComment(group) {
-      var deferred = $q.defer();
-      $http.post('http://localhost:2038/api/Comments/PostComment', group)
-        .then(function (res) {
-          deferred.resolve(res.data);
-        }, function (err) {
-          deferred.reject(err.data);
-        })
-      return deferred.promise;
+      function successCallBack(response) {
+        return response;
+      }
+
+      function errorCallBack(response) {
+        return response;
+      }
+      var request = "";
+      for (var key in group) {
+        request += key + "=" + group[key] + "&";
+      }
+
+      request = request.slice(0, request.length - 1);
+
+      return $http.post('http://localhost:2038/api/Comments/PostComment?' + request).then(successCallBack, errorCallBack);
     }
 
     function deleteComment(commentId) {

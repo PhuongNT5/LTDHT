@@ -1,13 +1,14 @@
 (function () {
   angular.module('app.hinhanh')
     .controller('hinhanhController', hinhanhController);
-  hinhanhController.$inject = ['$q', '$http', '$state', 'hinhanhService'];
+  hinhanhController.$inject = ['$q', '$http', '$location', '$state', 'hinhanhService'];
 
-  function hinhanhController($q, $http, $state, hinhanhService) {
+  function hinhanhController($q, $http, $state, $location, hinhanhService) {
     var vm = this;
     vm.turnActive = turnActive;
     vm.turn = 0;
     vm.hinhanh = {}
+    vm.deleteHinhanh = deleteHinhanh;
 
     function turnActive(state) {
       vm.turn = state;
@@ -32,12 +33,14 @@
         $state.go('admin.hinhanh', {
           reload: true
         });
-        hinhanhService.loadhinhanhs().then(function (hinhanh) {
-          vm.hinhanhs = hinhanh;
-        }, function (err) {
-          console.log(err);
-        });
+        toastr.success("Delete Thành công");
+        location.reload();
       }
+
+      function errorCallback(err) {
+        console.log(err);
+      }
+      hinhanhService.deleteHinhanh(hinhanhId).then(succeedCallback, errorCallback);
     }
   }
 

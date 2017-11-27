@@ -39,7 +39,7 @@
 
       request = request.slice(0, request.length - 1);
 
-      return $http.post('http://localhost:2038/api/Bantins/PostBantin/' + group).then(successCallBack, errorCallBack);
+      return $http.post('http://localhost:2038/api/Bantins/PostBantin?' + request).then(successCallBack, errorCallBack);
 
     }
 

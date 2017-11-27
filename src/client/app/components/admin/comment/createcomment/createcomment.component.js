@@ -7,42 +7,47 @@ angular.module('app.admin')
 
     }
   });
-createCommentController.$inject = ['$q', '$http', '$state', '$scope', 'commentService'];
+createCommentController.$inject = ['$q', '$http', '$state', '$scope', '$location', 'commentService'];
 
-function createCommentController($q, $http, $state, $scope, commentService) {
+function createCommentController($q, $http, $state, $scope, $location, commentService) {
   var vm = this;
   vm.comment = {};
   vm.createComment = createComment;
 
   function turnActive(state) {
     vm.turn = state;
-    console.log(vm.turn);
-  }
-
-  function createComment() {
-    if (validateForm()) {
-      commentService.createcomment(vm.comment).then(successCallBack, errorCallBack);
-    }
   }
 
   function validateForm() {
     var isValid = true;
+    if (!vm.comment.Noidung) {
+      toastr.error("Chưa nhập nội dung comment");
+    }
+    if (!vm.comment.UserID) {
+      toastr.error("Chưa xác định người  nhập");
+    }
     return isValid;
   }
 
-  function successCallBack(response) {
-    $state.go('admin.comment');
-    commentService.createComment(vm.comment).then(function (comment) {
-      vm.comment = comment;
-    }, function (err) {
-      console.log(err);
-    });;
-  }
+  function createComment() {
+    if (validateForm()) {
+      commentService.createComment(vm.comment).then(successCallBack, errorCallBack);
+    }
 
-  function errorCallBack(err) {
-    if (err) {
-      for (var i = 0; i < err.Errors.length; i++) {
-        toastr.error(err.Errors[i]);
+
+    function successCallBack(response) {
+      toastr.success("Tạo thành công!");
+      $state.go('admin.comment', {
+        reload: true
+      });
+      location.reload();
+    }
+
+    function errorCallBack(err) {
+      if (err) {
+        for (var i = 0; i < err.Errors.length; i++) {
+          toastr.error(err.Errors[i]);
+        }
       }
     }
   }
